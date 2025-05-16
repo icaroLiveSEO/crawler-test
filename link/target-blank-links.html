@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Links com Target Blank</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .link-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .warning {
+                background-color: #fffbe6;
+                border: 1px solid #ffe58f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .security-tip {
+                background-color: #f6ffed;
+                border: 1px solid #b7eb8f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+            .code {
+                font-family: monospace;
+                background-color: #f1f1f1;
+                padding: 2px 4px;
+                border-radius: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Links com Target Blank</h1>
+
+        <div class="warning">
+            <strong>Atenção:</strong> Esta página contém links com o atributo
+            <code>target="_blank"</code>, que faz com que os links sejam abertos
+            em uma nova aba ou janela do navegador.
+        </div>
+
+        <div class="link-section">
+            <h2>Links com Target Blank</h2>
+            <p>Os seguintes links abrem em uma nova aba ou janela:</p>
+            <ul>
+                <li>
+                    <a href="/index.html" target="_blank"
+                        >Link interno com target="_blank"</a
+                    >
+                    - abre a página inicial em nova aba
+                </li>
+                <li>
+                    <a href="https://www.google.com" target="_blank"
+                        >Link externo com target="_blank"</a
+                    >
+                    - abre o Google em nova aba
+                </li>
+                <li>
+                    <a
+                        href="https://www.wikipedia.org"
+                        target="_blank"
+                        rel="noopener"
+                        >Link com target="_blank" e rel="noopener"</a
+                    >
+                    - prática de segurança recomendada
+                </li>
+                <li>
+                    <a
+                        href="https://www.example.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Link com target="_blank" e rel="noopener noreferrer"</a
+                    >
+                    - máxima segurança
+                </li>
+            </ul>
+        </div>
+
+        <div class="security-tip">
+            <h3>Dica de Segurança</h3>
+            <p>
+                Ao usar <code>target="_blank"</code>, é recomendado adicionar
+                <code>rel="noopener"</code> ou
+                <code>rel="noopener noreferrer"</code> para evitar
+                vulnerabilidades de segurança. Isso impede que a página aberta
+                tenha acesso à página original através do objeto
+                <code>window.opener</code>.
+            </p>
+        </div>
+
+        <div class="link-section">
+            <h2>Comparação de Atributos Target</h2>
+            <table>
+                <tr>
+                    <th>Valor do Target</th>
+                    <th>Comportamento</th>
+                    <th>Exemplo</th>
+                </tr>
+                <tr>
+                    <td><code>_blank</code></td>
+                    <td>Abre em nova aba ou janela</td>
+                    <td>
+                        <a href="https://www.example.com" target="_blank"
+                            >Exemplo</a
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>_self</code></td>
+                    <td>Abre na mesma aba (padrão)</td>
+                    <td>
+                        <a href="https://www.example.com" target="_self"
+                            >Exemplo</a
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>_parent</code></td>
+                    <td>Abre no frame pai</td>
+                    <td>
+                        <a href="https://www.example.com" target="_parent"
+                            >Exemplo</a
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>_top</code></td>
+                    <td>Abre na janela completa</td>
+                    <td>
+                        <a href="https://www.example.com" target="_top"
+                            >Exemplo</a
+                        >
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com links que possuem o
+            atributo <code>target="_blank"</code>. Este atributo é comum em
+            sites que desejam manter o usuário na página original enquanto abrem
+            novos conteúdos.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar links com o atributo <code>target="_blank"</code></li>
+            <li>
+                Seguir esses links normalmente, independente do atributo target
+            </li>
+            <li>
+                Possivelmente identificar e reportar links sem os atributos de
+                segurança <code>rel="noopener"</code> ou
+                <code>rel="noopener noreferrer"</code>
+            </li>
+        </ul>
+
+        <h3>Considerações de SEO:</h3>
+        <ul>
+            <li>
+                O atributo <code>target="_blank"</code> não afeta diretamente o
+                SEO
+            </li>
+            <li>
+                Os motores de busca seguem os links independentemente de como
+                eles são abertos no navegador
+            </li>
+            <li>
+                O uso de <code>rel="noopener noreferrer"</code> não impede que
+                os motores de busca sigam os links
+            </li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="link-types.html">Ir para página de tipos de links</a>
+            </li>
+        </ul>
+    </body>
+</html>

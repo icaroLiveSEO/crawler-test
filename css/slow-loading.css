@@ -1,0 +1,14 @@
+/* Este arquivo CSS é carregado lentamente (simulado pelo servidor) */
+.slow-element {
+    color: #fa8c16;
+    background-color: #fff7e6;
+    padding: 10px;
+    border: 1px solid #ffd591;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.slow-element h3 {
+    margin-top: 0;
+    color: #d46b08;
+}

@@ -1,0 +1,14 @@
+/* Arquivo CSS normal */
+.styled-element {
+    color: #1890ff;
+    background-color: #e6f7ff;
+    padding: 10px;
+    border: 1px solid #91d5ff;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.styled-element h3 {
+    margin-top: 0;
+    color: #096dd9;
+}

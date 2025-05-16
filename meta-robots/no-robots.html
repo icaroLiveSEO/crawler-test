@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste sem Meta Robots</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .robots-box {
+                background-color: #f9f9f9;
+                border: 1px solid #d9d9d9;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .info {
+                background-color: #e6f7ff;
+                border: 1px solid #91d5ff;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste sem Meta Robots</h1>
+
+        <div class="robots-box">
+            <h2>Esta página não possui meta robots</h2>
+            <p>
+                Nenhuma diretiva robots foi especificada no cabeçalho desta
+                página.
+            </p>
+        </div>
+
+        <div class="info">
+            <strong>Informação:</strong> Quando nenhuma diretiva robots é
+            especificada, os motores de busca assumem o comportamento padrão
+            "index, follow".
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página não contém nenhuma diretiva meta robots. O objetivo é
+            testar como o crawler lida com a ausência de instruções explícitas.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Assumir o comportamento padrão (index, follow)</li>
+            <li>Indexar esta página</li>
+            <li>Seguir os links encontrados nesta página</li>
+        </ul>
+
+        <p>
+            A ausência de meta robots não é um problema de SEO, pois o
+            comportamento padrão geralmente é o desejado para a maioria das
+            páginas públicas.
+        </p>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="robots-index-follow.html"
+                    >Ir para página com index, follow explícito</a
+                >
+            </li>
+        </ul>
+    </body>
+</html>

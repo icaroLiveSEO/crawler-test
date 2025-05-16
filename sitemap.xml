@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <url>
+    <loc>http://127.0.0.1:5500/index.html</loc>
+    <lastmod>2023-06-15T12:30:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/structured/no-semantic.html</loc>
+    <lastmod>2023-06-10T10:15:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/structured/multiple-h1.html</loc>
+    <lastmod>2023-06-10T10:20:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/structured/no-main.html</loc>
+    <lastmod>2023-06-10T10:25:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/structured/semantic-structures.html</loc>
+    <lastmod>2023-06-10T10:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/content/dense-text.html</loc>
+    <lastmod>2023-06-12T14:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/content/word-count-test.html</loc>
+    <lastmod>2023-06-12T14:35:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/content/nested-content.html</loc>
+    <lastmod>2023-06-12T14:40:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/content/thin-content.html</loc>
+    <lastmod>2023-06-12T14:45:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/meta-data/no-titles.html</loc>
+    <lastmod>2023-06-13T09:15:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/meta-data/all-titles.html</loc>
+    <lastmod>2023-06-13T09:20:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+
+  <url>
+    <loc>http://127.0.0.1:5500/description/meta-description.html</loc>
+    <lastmod>2023-06-13T10:15:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/description/no-description.html</loc>
+    <lastmod>2023-06-13T10:20:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>http://127.0.0.1:5500/image/image-basics.html</loc>
+    <lastmod>2023-06-14T09:45:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>http://127.0.0.1:5500/images/example1.jpg</image:loc>
+      <image:title>Exemplo de Imagem 1</image:title>
+      <image:caption>Esta é uma imagem de exemplo para testes</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://127.0.0.1:5500/images/example2.png</image:loc>
+      <image:title>Exemplo de Imagem 2</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/image/image-formats.html</loc>
+    <lastmod>2023-06-14T09:50:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+
+  <url>
+    <loc>http://127.0.0.1:5500/link/link-types.html</loc>
+    <lastmod>2023-06-14T11:15:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/link/broken-links.html</loc>
+    <lastmod>2023-06-14T11:20:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>http://127.0.0.1:5500/content-types/json-response.json</loc>
+    <lastmod>2023-06-15T10:15:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/content-types/plain-text.txt</loc>
+    <lastmod>2023-06-15T10:20:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/video-page.html</loc>
+    <lastmod>2023-06-14T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <video:video>
+      <video:thumbnail_loc>http://127.0.0.1:5500/videos/thumbnail.jpg</video:thumbnail_loc>
+      <video:title>Vídeo de Exemplo</video:title>
+      <video:description>Este é um vídeo de exemplo para testes de sitemap</video:description>
+      <video:content_loc>http://127.0.0.1:5500/videos/example.mp4</video:content_loc>
+      <video:duration>120</video:duration>
+    </video:video>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/pagina-inexistente.html</loc>
+    <lastmod>2023-06-01T08:00:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.1</priority>
+  </url>
+  
+  <url>
+    <loc>127.0.0.1:5500/formato-invalido.html</loc>
+    <lastmod>2023-06-01T08:10:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.1</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/prioridade-invalida.html</loc>
+    <lastmod>2023-06-01T08:20:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>1.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:5500/data-invalida.html</loc>
+    <lastmod>2023-13-40T25:70:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset> 

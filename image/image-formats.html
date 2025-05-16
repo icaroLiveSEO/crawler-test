@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Formatos de Imagem</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .image-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .image-container {
+                margin: 15px 0;
+                text-align: center;
+            }
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #ddd;
+                margin-bottom: 10px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .format-info {
+                margin-top: 5px;
+                font-size: 0.9em;
+                color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Formatos de Imagem</h1>
+
+        <div class="image-section">
+            <h2>Diferentes formatos de imagem</h2>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Exemplo de imagem JPG"
+                />
+                <p><strong>Formato JPG</strong></p>
+                <p class="format-info">
+                    Bom para fotografias e imagens com muitas cores e gradientes
+                </p>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Exemplo de imagem PNG"
+                />
+                <p><strong>Formato PNG</strong></p>
+                <p class="format-info">
+                    Suporta transparência, bom para gráficos, logos e imagens
+                    com texto
+                </p>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Exemplo de imagem GIF"
+                />
+                <p><strong>Formato GIF</strong></p>
+                <p class="format-info">
+                    Suporta animações simples, limitado a 256 cores
+                </p>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Exemplo de imagem SVG"
+                />
+                <p><strong>Formato SVG</strong></p>
+                <p class="format-info">
+                    Gráficos vetoriais, escaláveis sem perda de qualidade, ideal
+                    para ícones e logos
+                </p>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Exemplo de imagem WebP"
+                />
+                <p><strong>Formato WebP</strong></p>
+                <p class="format-info">
+                    Formato moderno com melhor compressão, suporta transparência
+                    e animação
+                </p>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <h2>Comparação de formatos de imagem</h2>
+
+            <table>
+                <tr>
+                    <th>Formato</th>
+                    <th>Vantagens</th>
+                    <th>Desvantagens</th>
+                    <th>Melhor uso</th>
+                </tr>
+                <tr>
+                    <td>JPG/JPEG</td>
+                    <td>Boa compressão, amplamente suportado</td>
+                    <td>Compressão com perda, sem transparência</td>
+                    <td>Fotografias, imagens complexas</td>
+                </tr>
+                <tr>
+                    <td>PNG</td>
+                    <td>Transparência, compressão sem perda</td>
+                    <td>Arquivos maiores que JPG</td>
+                    <td>Logos, gráficos, imagens com transparência</td>
+                </tr>
+                <tr>
+                    <td>GIF</td>
+                    <td>Animações, amplamente suportado</td>
+                    <td>Limitado a 256 cores</td>
+                    <td>Animações simples, ícones simples</td>
+                </tr>
+                <tr>
+                    <td>SVG</td>
+                    <td>Escalável, arquivos pequenos</td>
+                    <td>Não ideal para fotografias</td>
+                    <td>Ícones, logos, gráficos</td>
+                </tr>
+                <tr>
+                    <td>WebP</td>
+                    <td>Melhor compressão, suporta transparência</td>
+                    <td>Suporte limitado em navegadores antigos</td>
+                    <td>Substituição moderna para JPG e PNG</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com imagens em diferentes
+            formatos (JPG, PNG, GIF, SVG, WebP).
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar e processar todos os formatos de imagem</li>
+            <li>Identificar o formato de cada imagem</li>
+            <li>
+                Possivelmente sugerir formatos mais eficientes (ex: WebP em vez
+                de JPG)
+            </li>
+            <li>Verificar se há suporte para formatos modernos como WebP</li>
+        </ul>
+
+        <h3>Links para outros testes de imagem:</h3>
+        <ul>
+            <li><a href="image-basics.html">Teste de imagens básicas</a></li>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

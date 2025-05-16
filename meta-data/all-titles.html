@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Título Principal da Página</title>
+        <meta name="title" content="Meta Title Diferente" />
+        <meta property="og:title" content="Open Graph Title Único" />
+        <meta name="twitter:title" content="Twitter Card Title Especial" />
+        <meta name="description" content="Descrição da página para SEO" />
+        <meta
+            property="og:description"
+            content="Descrição para compartilhamento em redes sociais"
+        />
+        <meta
+            name="twitter:description"
+            content="Descrição para Twitter Cards"
+        />
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .title-section {
+                background-color: #f5f5f5;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .title-type {
+                font-weight: bold;
+                color: #333;
+            }
+            .title-value {
+                color: #0066cc;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Título H1 Completamente Diferente</h1>
+        <p>
+            Esta página possui todos os tipos de título diferentes entre si para
+            testar como o crawler lida com múltiplas opções de título.
+        </p>
+
+        <div class="title-section">
+            <h2>Títulos presentes nesta página:</h2>
+            <table>
+                <tr>
+                    <th>Tipo de Título</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td><span class="title-type">title tag</span></td>
+                    <td>
+                        <span class="title-value"
+                            >Título Principal da Página</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="title-type">meta title</span></td>
+                    <td>
+                        <span class="title-value">Meta Title Diferente</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="title-type">og:title</span></td>
+                    <td>
+                        <span class="title-value">Open Graph Title Único</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="title-type">twitter:title</span></td>
+                    <td>
+                        <span class="title-value"
+                            >Twitter Card Title Especial</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="title-type">h1</span></td>
+                    <td>
+                        <span class="title-value"
+                            >Título H1 Completamente Diferente</span
+                        >
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>Priorização de Títulos</h2>
+        <p>O crawler deve ser capaz de:</p>
+        <ul>
+            <li>Identificar todos os diferentes tipos de título</li>
+            <li>Registrar corretamente cada variante</li>
+            <li>Implementar uma lógica de priorização se necessário</li>
+        </ul>
+
+        <h3>Casos de uso para teste:</h3>
+        <ol>
+            <li>Verificar se o crawler extrai todos os tipos de título</li>
+            <li>
+                Verificar qual título é priorizado na exibição de resultados
+            </li>
+            <li>
+                Testar a capacidade de diferenciar entre os vários tipos de
+                metadados
+            </li>
+        </ol>
+
+        <p>Alguns crawlers podem priorizar os títulos na seguinte ordem:</p>
+        <ol>
+            <li>Tag title (HTML)</li>
+            <li>Meta title</li>
+            <li>Open Graph title</li>
+            <li>Twitter Card title</li>
+            <li>Primeiro H1 da página</li>
+        </ol>
+    </body>
+</html>

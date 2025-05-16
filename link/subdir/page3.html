@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Subdiretório - Página 3 (Nofollow)</title>
+        <meta
+            name="description"
+            content="Página em subdiretório para testar links com atributo nofollow."
+        />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #333;
+            }
+
+            h1,
+            h2 {
+                color: #2c3e50;
+            }
+
+            .content {
+                background-color: #f8f9fa;
+                border: 1px solid #e9ecef;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .navigation {
+                margin-top: 30px;
+                padding: 15px;
+                background-color: #e9f5ff;
+                border-radius: 5px;
+            }
+
+            .navigation ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .navigation li {
+                margin-bottom: 10px;
+            }
+
+            .navigation a {
+                color: #1890ff;
+                text-decoration: none;
+            }
+
+            .navigation a:hover {
+                text-decoration: underline;
+            }
+
+            .highlight {
+                background-color: #fff7e6;
+                border-left: 4px solid #fa8c16;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Subdiretório - Página 3 (Nofollow)</h1>
+
+        <div class="content">
+            <h2>Sobre esta página</h2>
+            <p>
+                Esta página é acessada através de um link com o atributo
+                <code>rel="nofollow"</code>. Ela foi criada para testar como os
+                crawlers lidam com links que têm instruções para não serem
+                seguidos.
+            </p>
+            <p>
+                A URL relativa desta página a partir da raiz do site é:
+                <code>/link/subdir/page3.html</code>
+            </p>
+        </div>
+
+        <div class="content">
+            <h2>Atributo Nofollow</h2>
+            <p>
+                O atributo <code>rel="nofollow"</code> é uma instrução para os
+                motores de busca não seguirem o link e não transferirem
+                autoridade ou "link juice" para a página de destino.
+            </p>
+
+            <div class="highlight">
+                <p><strong>Exemplo de link com nofollow:</strong></p>
+                <code
+                    >&lt;a href="page3.html" rel="nofollow"&gt;Link com
+                    Nofollow&lt;/a&gt;</code
+                >
+            </div>
+
+            <p>Usos comuns do atributo nofollow:</p>
+            <ul>
+                <li>
+                    Links em conteúdo gerado por usuários (comentários, fóruns)
+                </li>
+                <li>Links pagos ou patrocinados</li>
+                <li>Links para páginas não confiáveis</li>
+                <li>Links para páginas de login ou registro</li>
+                <li>Widgets e ferramentas de terceiros</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>Teste para Crawlers</h2>
+            <p>
+                Se um crawler estiver respeitando corretamente o atributo
+                nofollow, ele não deveria descobrir esta página através do link
+                na página de links válidos. No entanto, ele pode descobrir esta
+                página através de outros links no site que não têm o atributo
+                nofollow.
+            </p>
+            <p>Um crawler avançado deve ser capaz de:</p>
+            <ul>
+                <li>
+                    Identificar que esta página foi encontrada através de um
+                    link com nofollow
+                </li>
+                <li>Registrar o link, mas não seguir automaticamente</li>
+                <li>Não transferir autoridade através desse link</li>
+            </ul>
+        </div>
+
+        <div class="navigation">
+            <h2>Navegação</h2>
+            <ul>
+                <li><a href="page1.html">Ir para Página 1</a></li>
+                <li><a href="page2.html">Ir para Página 2</a></li>
+                <li>
+                    <a href="page4.html">Ir para Página 4</a>
+                </li>
+                <li>
+                    <a href="../valid-links.html"
+                        >Voltar para Página de Links Válidos</a
+                    >
+                </li>
+                <li>
+                    <a href="../../index.html">Voltar para Página Inicial</a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

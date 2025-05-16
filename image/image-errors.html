@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Imagens com Erros</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .image-section {
+                background-color: #fff1f0;
+                border: 1px solid #ffa39e;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .image-container {
+                margin: 15px 0;
+                text-align: center;
+            }
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #ddd;
+            }
+            .error-type {
+                font-weight: bold;
+                color: #cf1322;
+                margin-top: 5px;
+            }
+            .warning-box {
+                background-color: #fffbe6;
+                border: 1px solid #ffe58f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Imagens com Erros</h1>
+
+        <div class="warning-box">
+            <p>
+                <strong>Nota:</strong> Esta página contém propositalmente
+                imagens que não carregam corretamente para testar como o crawler
+                lida com esses erros.
+            </p>
+        </div>
+
+        <div class="image-section">
+            <h2>Imagens com URLs quebradas</h2>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-non-existent-404"
+                    alt="Imagem com URL que retorna erro 404"
+                />
+                <p class="error-type">Erro 404 - Arquivo não encontrado</p>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://dominio-inexistente-para-teste.com/imagem.jpg"
+                    alt="Imagem com domínio inexistente"
+                />
+                <p class="error-type">Erro DNS - Domínio não encontrado</p>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <h2>Imagens com problemas de permissão</h2>
+
+            <div class="image-container">
+                <img
+                    src="https://exemplo.com/imagem-restrita.jpg"
+                    alt="Imagem com acesso restrito"
+                />
+                <p class="error-type">Erro 403 - Acesso proibido</p>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <h2>Imagens com URLs malformadas</h2>
+
+            <div class="image-container">
+                <img
+                    src="http:/exemplo.com/imagem.jpg"
+                    alt="Imagem com URL malformada - falta uma barra"
+                />
+                <p class="error-type">URL malformada</p>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="ftp:exemplo.com/imagem.jpg"
+                    alt="Imagem com protocolo incorreto"
+                />
+                <p class="error-type">Protocolo incorreto</p>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <h2>Imagens com atributos src vazios ou inválidos</h2>
+
+            <div class="image-container">
+                <img src="" alt="Imagem com src vazio" />
+                <p class="error-type">Atributo src vazio</p>
+            </div>
+
+            <div class="image-container">
+                <img alt="Imagem sem atributo src" />
+                <p class="error-type">Sem atributo src</p>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img
+                src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Imagem válida para comparação"
+                width="300"
+                height="200"
+            />
+            <p class="error-type">Imagem válida (para comparação)</p>
+        </div>
+
+        <div class="image-container">
+            <img
+                src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Imagem com dimensões incorretas"
+                width="300"
+                height="50"
+            />
+            <p class="error-type">Erro de proporção - Dimensões incorretas</p>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com imagens que apresentam
+            diferentes tipos de erros de carregamento.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar imagens que não podem ser carregadas</li>
+            <li>Identificar o tipo de erro (404, DNS, permissão, etc.)</li>
+            <li>
+                Reportar imagens quebradas como problemas de SEO e experiência
+                do usuário
+            </li>
+            <li>
+                Verificar se há texto alternativo adequado para imagens
+                quebradas
+            </li>
+        </ul>
+
+        <h3>Tipos comuns de erros de imagem:</h3>
+        <table>
+            <tr>
+                <th>Código de erro</th>
+                <th>Descrição</th>
+                <th>Causa comum</th>
+            </tr>
+            <tr>
+                <td>404</td>
+                <td>Não encontrado</td>
+                <td>Arquivo não existe no servidor</td>
+            </tr>
+            <tr>
+                <td>403</td>
+                <td>Proibido</td>
+                <td>Sem permissão para acessar o arquivo</td>
+            </tr>
+            <tr>
+                <td>500</td>
+                <td>Erro interno do servidor</td>
+                <td>Problema no servidor ao processar a requisição</td>
+            </tr>
+            <tr>
+                <td>DNS</td>
+                <td>Domínio não encontrado</td>
+                <td>O domínio não existe ou não está acessível</td>
+            </tr>
+            <tr>
+                <td>Timeout</td>
+                <td>Tempo esgotado</td>
+                <td>Servidor muito lento ou não respondeu</td>
+            </tr>
+        </table>
+
+        <h3>Links para outros testes de imagem:</h3>
+        <ul>
+            <li><a href="image-basics.html">Teste de imagens básicas</a></li>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

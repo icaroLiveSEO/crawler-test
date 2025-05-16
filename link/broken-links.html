@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Links Quebrados</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .link-section {
+                background-color: #fff1f0;
+                border: 1px solid #ffa39e;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .warning {
+                background-color: #fffbe6;
+                border: 1px solid #ffe58f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+            .code {
+                font-family: monospace;
+                background-color: #f1f1f1;
+                padding: 2px 4px;
+                border-radius: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Links Quebrados</h1>
+
+        <div class="warning">
+            <strong>Atenção:</strong> Esta página contém links propositalmente
+            quebrados para testar como o crawler detecta e reporta links que
+            levam a recursos inexistentes (404).
+        </div>
+
+        <div class="link-section">
+            <h2>Links Quebrados Internos</h2>
+            <p>
+                Links que apontam para páginas inexistentes dentro do mesmo
+                site:
+            </p>
+            <ul>
+                <li>
+                    <a href="pagina-que-nao-existe.html"
+                        >Link para página inexistente</a
+                    >
+                    - deve retornar 404
+                </li>
+                <li>
+                    <a href="pasta-inexistente/outra-pagina.html"
+                        >Link para pasta inexistente</a
+                    >
+                    - deve retornar 404
+                </li>
+                <li>
+                    <a href="/recurso-inexistente"
+                        >Link absoluto interno inexistente</a
+                    >
+                    - deve retornar 404
+                </li>
+            </ul>
+        </div>
+
+        <div class="link-section">
+            <h2>Links Quebrados Externos</h2>
+            <p>Links que apontam para recursos inexistentes em outros sites:</p>
+            <ul>
+                <li>
+                    <a
+                        href="https://www.example.com/pagina-inexistente-123456789"
+                        >Link externo inexistente</a
+                    >
+                    - deve retornar 404
+                </li>
+                <li>
+                    <a href="https://subdominio-inexistente.example.com"
+                        >Link para subdomínio inexistente</a
+                    >
+                    - pode retornar DNS error
+                </li>
+                <li>
+                    <a href="https://dominio-que-nao-existe-123456789.com"
+                        >Link para domínio inexistente</a
+                    >
+                    - deve retornar DNS error
+                </li>
+            </ul>
+        </div>
+
+        <div class="link-section">
+            <h2>Links com Erros de Redirecionamento</h2>
+            <p>Links que podem causar problemas de redirecionamento:</p>
+            <ul>
+                <li>
+                    <a href="https://example.com/redirect-loop"
+                        >Link com loop de redirecionamento</a
+                    >
+                    - pode causar erro de redirecionamento infinito
+                </li>
+                <li>
+                    <a href="https://example.com/redirect-chain"
+                        >Link com cadeia longa de redirecionamentos</a
+                    >
+                    - pode causar problemas de performance
+                </li>
+            </ul>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página contém links quebrados propositalmente para testar como
+            o crawler detecta e reporta problemas de links. Em um site real,
+            links quebrados devem ser evitados, pois:
+        </p>
+        <ul>
+            <li>Prejudicam a experiência do usuário</li>
+            <li>Desperdiçam o orçamento de crawl dos motores de busca</li>
+            <li>Podem afetar negativamente o SEO do site</li>
+            <li>Dificultam a navegação e descoberta de conteúdo</li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="link-types.html">Ir para página de tipos de links</a>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Página sem Estrutura Semântica</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+            }
+            .top {
+                background-color: #f0f0f0;
+                padding: 10px;
+            }
+            .menu {
+                background-color: #ddd;
+                padding: 10px;
+            }
+            .content {
+                padding: 20px;
+            }
+            .bottom {
+                background-color: #333;
+                color: white;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <div>Meu Site Sem Semântica</div>
+            <div>Um site com problemas de SEO para testes</div>
+        </div>
+
+        <div class="menu">
+            <div><a href="/index.html">Início</a></div>
+            <div><a href="#">Sobre</a></div>
+            <div><a href="#">Contato</a></div>
+        </div>
+
+        <div class="content">
+            <div>Bem-vindo ao nosso site</div>
+            <div>
+                Este é um site de exemplo que não utiliza tags semânticas HTML5.
+                Isso torna difícil para os motores de busca entenderem a
+                estrutura do conteúdo.
+            </div>
+
+            <div>
+                <div>Subseção 1</div>
+                <div>
+                    Este conteúdo deveria estar em uma tag &lt;section&gt; ou
+                    &lt;article&gt;. Sem essas tags, os crawlers têm dificuldade
+                    em identificar a importância relativa do conteúdo.
+                </div>
+            </div>
+
+            <div>
+                <div>Subseção 2</div>
+                <div>
+                    Outro problema é a falta de hierarquia clara nos títulos.
+                    Não estamos usando h1, h2, h3, etc. de forma adequada.
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div>Copyright 2023 - Todos os direitos reservados</div>
+        </div>
+    </body>
+</html>

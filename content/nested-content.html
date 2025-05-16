@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Conteúdo Aninhado</title>
+        <meta
+            name="description"
+            content="Página para testar como crawlers lidam com conteúdo profundamente aninhado em múltiplas divs."
+        />
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .content-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .wrapper-level-1 {
+                border: 1px solid #d9d9d9;
+                padding: 15px;
+                margin: 10px 0;
+                background-color: #fafafa;
+            }
+            .wrapper-level-2 {
+                border: 1px solid #e8e8e8;
+                padding: 15px;
+                margin: 10px 0;
+                background-color: #f5f5f5;
+            }
+            .wrapper-level-3 {
+                border: 1px solid #f0f0f0;
+                padding: 15px;
+                margin: 10px 0;
+                background-color: #f9f9f9;
+            }
+            .wrapper-level-4 {
+                border: 1px solid #f5f5f5;
+                padding: 15px;
+                margin: 10px 0;
+                background-color: #fcfcfc;
+            }
+            .wrapper-level-5 {
+                border: 1px solid #fafafa;
+                padding: 15px;
+                margin: 10px 0;
+                background-color: #ffffff;
+            }
+            .actual-content {
+                padding: 15px;
+                background-color: #e6f7ff;
+                border: 1px solid #91d5ff;
+                border-radius: 4px;
+            }
+            .code-block {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                margin: 15px 0;
+            }
+            .depth-indicator {
+                font-size: 12px;
+                color: #999;
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Conteúdo Aninhado</h1>
+
+        <div class="content-section">
+            <h2>Sobre o Conteúdo Aninhado</h2>
+            <p>
+                O conteúdo aninhado (nested content) ocorre quando o conteúdo
+                principal de uma página está envolvido em múltiplas camadas de
+                elementos HTML, geralmente divs. Isso pode dificultar a análise
+                pelos crawlers e afetar a relevância do conteúdo para SEO.
+            </p>
+            <p>
+                Nesta página, o conteúdo principal está aninhado em 5 níveis de
+                divs, o que pode representar um desafio para alguns crawlers
+                identificarem o conteúdo mais importante.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Exemplo de Conteúdo Aninhado</h2>
+
+            <!-- Nível 1 de aninhamento -->
+            <div class="wrapper-level-1">
+                <div class="depth-indicator">Nível 1 de aninhamento</div>
+
+                <!-- Nível 2 de aninhamento -->
+                <div class="wrapper-level-2">
+                    <div class="depth-indicator">Nível 2 de aninhamento</div>
+
+                    <!-- Nível 3 de aninhamento -->
+                    <div class="wrapper-level-3">
+                        <div class="depth-indicator">
+                            Nível 3 de aninhamento
+                        </div>
+
+                        <!-- Nível 4 de aninhamento -->
+                        <div class="wrapper-level-4">
+                            <div class="depth-indicator">
+                                Nível 4 de aninhamento
+                            </div>
+
+                            <!-- Nível 5 de aninhamento -->
+                            <div class="wrapper-level-5">
+                                <div class="depth-indicator">
+                                    Nível 5 de aninhamento
+                                </div>
+
+                                <!-- Conteúdo principal -->
+                                <div class="actual-content">
+                                    <h3>
+                                        Este é o conteúdo principal da página
+                                    </h3>
+                                    <p>
+                                        Este texto está aninhado em 5 níveis de
+                                        divs, o que pode dificultar a análise
+                                        pelos crawlers. Em um site real, isso
+                                        poderia ser causado por:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            Uso excessivo de contêineres para
+                                            estilização
+                                        </li>
+                                        <li>
+                                            Frameworks CSS que geram muitas divs
+                                            aninhadas
+                                        </li>
+                                        <li>
+                                            Componentes de UI que são
+                                            encapsulados em múltiplas camadas
+                                        </li>
+                                        <li>
+                                            Código legado que foi modificado ao
+                                            longo do tempo
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Crawlers mais avançados podem
+                                        identificar este conteúdo como
+                                        relevante, mas crawlers mais simples
+                                        podem ter dificuldade em determinar a
+                                        importância deste texto em relação ao
+                                        resto da página.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Estrutura HTML do Conteúdo Aninhado</h2>
+            <div class="code-block">
+                &lt;div class="wrapper-level-1"&gt; &lt;div
+                class="wrapper-level-2"&gt; &lt;div class="wrapper-level-3"&gt;
+                &lt;div class="wrapper-level-4"&gt; &lt;div
+                class="wrapper-level-5"&gt; &lt;div class="actual-content"&gt;
+                &lt;h3&gt;Este é o conteúdo principal da página&lt;/h3&gt;
+                &lt;p&gt;Este texto está aninhado em 5 níveis de
+                divs...&lt;/p&gt; ... &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
+                &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
+            </div>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com conteúdo que está
+            profundamente aninhado em múltiplas divs.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>
+                Identificar o conteúdo principal mesmo estando profundamente
+                aninhado
+            </li>
+            <li>Avaliar corretamente a relevância do conteúdo aninhado</li>
+            <li>
+                Reconhecer a estrutura de cabeçalhos mesmo em níveis profundos
+                de aninhamento
+            </li>
+            <li>
+                Extrair o texto significativo independentemente do nível de
+                aninhamento
+            </li>
+        </ul>
+
+        <h3>Links para outros testes:</h3>
+        <ul>
+            <li>
+                <a href="/conteudo/thin-content.html"
+                    >Teste de Conteúdo Escasso</a
+                >
+            </li>
+            <li>
+                <a href="/conteudo/hidden-content.html"
+                    >Teste de Conteúdo Oculto</a
+                >
+            </li>
+            <li><a href="../index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

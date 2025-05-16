@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Página de Carregamento Lento</title>
+        <meta
+            name="description"
+            content="Página que demora mais de 4 segundos para carregar completamente, demonstrando problemas de performance."
+        />
+
+        <!-- CSS com carregamento bloqueante -->
+        <link rel="stylesheet" href="../css/styles.css" />
+
+        <!-- CSS com carregamento lento simulado -->
+        <link rel="stylesheet" href="../css/slow-loading.css" />
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #333;
+            }
+
+            .content-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+
+            .loading-indicator {
+                display: none;
+                padding: 15px;
+                margin: 15px 0;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            .timer-display {
+                font-size: 24px;
+                font-weight: bold;
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .resource-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+
+            .resource-table th,
+            .resource-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .resource-table th {
+                background-color: #f2f2f2;
+            }
+
+            .status-slow {
+                color: #faad14;
+                font-weight: bold;
+            }
+
+            .status-very-slow {
+                color: #f5222d;
+                font-weight: bold;
+            }
+
+            .heavy-image {
+                max-width: 100%;
+                height: auto;
+                display: none;
+            }
+
+            .lazy-section {
+                display: none;
+                padding: 15px;
+                background-color: #f6ffed;
+                border: 1px solid #b7eb8f;
+                border-radius: 5px;
+                margin: 15px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Página com Carregamento Lento</h1>
+
+        <div class="timer-display" id="timer">
+            Tempo de carregamento: 0 segundos
+        </div>
+
+        <div class="content-section">
+            <h2>Sobre esta Página</h2>
+            <p>
+                Esta página foi projetada para demorar mais de 4 segundos para
+                carregar completamente. Ela demonstra vários problemas de
+                performance que podem afetar a experiência do usuário e a
+                avaliação de SEO.
+            </p>
+            <p>O carregamento lento é simulado através de:</p>
+            <ul>
+                <li>JavaScript que bloqueia a renderização</li>
+                <li>Recursos CSS carregados com atraso</li>
+                <li>Conteúdo que é revelado progressivamente</li>
+                <li>Simulação de processamento pesado</li>
+            </ul>
+        </div>
+
+        <div
+            class="loading-indicator"
+            id="loading-1"
+            style="background-color: #fff7e6; border: 1px solid #ffd591"
+        >
+            <p><strong>Primeiro recurso carregado após 2 segundos</strong></p>
+            <p>
+                Este conteúdo foi revelado após um atraso intencional de 2
+                segundos.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Impacto do Carregamento Lento</h2>
+            <p>
+                Páginas que demoram para carregar têm vários impactos negativos:
+            </p>
+            <ul>
+                <li>
+                    Aumento da taxa de rejeição (usuários desistem de esperar)
+                </li>
+                <li>Redução na taxa de conversão</li>
+                <li>Experiência do usuário prejudicada</li>
+                <li>Penalização nos rankings de busca (Core Web Vitals)</li>
+                <li>Maior consumo de dados em dispositivos móveis</li>
+            </ul>
+        </div>
+
+        <div
+            class="loading-indicator"
+            id="loading-2"
+            style="background-color: #e6f7ff; border: 1px solid #91d5ff"
+        >
+            <p><strong>Segundo recurso carregado após 3 segundos</strong></p>
+            <p>
+                Este conteúdo foi revelado após um atraso intencional de 3
+                segundos.
+            </p>
+            <table class="resource-table">
+                <tr>
+                    <th>Recurso</th>
+                    <th>Tempo de Carregamento</th>
+                    <th>Impacto</th>
+                </tr>
+                <tr>
+                    <td>HTML inicial</td>
+                    <td>Imediato</td>
+                    <td>Baixo</td>
+                </tr>
+                <tr>
+                    <td>CSS principal</td>
+                    <td>Rápido</td>
+                    <td>Médio</td>
+                </tr>
+                <tr>
+                    <td>JavaScript bloqueante</td>
+                    <td class="status-slow">2 segundos</td>
+                    <td>Alto</td>
+                </tr>
+                <tr>
+                    <td>Conteúdo dinâmico</td>
+                    <td class="status-slow">3 segundos</td>
+                    <td>Alto</td>
+                </tr>
+                <tr>
+                    <td>Recursos finais</td>
+                    <td class="status-very-slow">4+ segundos</td>
+                    <td>Muito Alto</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="lazy-section" id="lazy-content-1">
+            <h2>Conteúdo Carregado com Atraso (4 segundos)</h2>
+            <p>
+                Este conteúdo foi carregado após 4 segundos. Em uma página real,
+                este atraso poderia ser causado por:
+            </p>
+            <ul>
+                <li>Scripts de terceiros (analytics, anúncios, widgets)</li>
+                <li>Imagens não otimizadas</li>
+                <li>Consultas de banco de dados lentas</li>
+                <li>Servidores com recursos insuficientes</li>
+                <li>Código JavaScript ineficiente</li>
+            </ul>
+        </div>
+
+        <div class="lazy-section" id="lazy-content-2">
+            <h2>Recomendações para Melhorar a Velocidade</h2>
+            <p>Para resolver problemas de carregamento lento, considere:</p>
+            <ul>
+                <li>Otimizar e comprimir imagens</li>
+                <li>Minificar CSS e JavaScript</li>
+                <li>
+                    Implementar carregamento assíncrono para scripts não
+                    críticos
+                </li>
+                <li>
+                    Utilizar técnicas de carregamento lazy para conteúdo abaixo
+                    da dobra
+                </li>
+                <li>Implementar cache no navegador</li>
+                <li>Utilizar uma CDN (Content Delivery Network)</li>
+                <li>Reduzir o número de redirecionamentos</li>
+                <li>Otimizar o tempo de resposta do servidor</li>
+            </ul>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com páginas que demoram
+            significativamente para carregar completamente.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>
+                Identificar que a página tem um tempo de carregamento excessivo
+            </li>
+            <li>Detectar os recursos que estão causando o atraso</li>
+            <li>Avaliar o impacto na experiência do usuário</li>
+            <li>Sugerir melhorias para reduzir o tempo de carregamento</li>
+            <li>
+                Verificar se todo o conteúdo foi indexado, incluindo o que
+                carrega com atraso
+            </li>
+        </ul>
+
+        <h3>Links para outros testes:</h3>
+        <ul>
+            <li>
+                <a href="resource-loading.html"
+                    >Teste de Carregamento de Recursos</a
+                >
+            </li>
+            <li><a href="../index.html">Voltar para a página inicial</a></li>
+        </ul>
+
+        <!-- Scripts que simulam carregamento lento -->
+        <script>
+            // Timer para mostrar o tempo de carregamento
+            let seconds = 0;
+            const timerElement = document.getElementById('timer');
+
+            const timerInterval = setInterval(() => {
+                seconds++;
+                timerElement.textContent = `Tempo de carregamento: ${seconds} segundos`;
+
+                // Parar o timer após 6 segundos
+                if (seconds >= 6) {
+                    clearInterval(timerInterval);
+                    timerElement.textContent = `Carregamento completo: ${seconds} segundos`;
+                    timerElement.style.color = '#52c41a';
+                }
+            }, 1000);
+
+            // Simulação de processamento pesado
+            function simulateHeavyProcessing(duration) {
+                const start = Date.now();
+                while (Date.now() - start < duration) {
+                    // Loop intensivo de CPU
+                    Math.random() * Math.random();
+                }
+            }
+
+            // Bloquear o thread principal por 500ms
+            simulateHeavyProcessing(500);
+
+            // Mostrar o primeiro conteúdo após 2 segundos
+            setTimeout(() => {
+                document.getElementById('loading-1').style.display = 'block';
+                // Bloquear o thread principal novamente
+                simulateHeavyProcessing(200);
+            }, 2000);
+
+            // Mostrar o segundo conteúdo após 3 segundos
+            setTimeout(() => {
+                document.getElementById('loading-2').style.display = 'block';
+                // Bloquear o thread principal novamente
+                simulateHeavyProcessing(300);
+            }, 3000);
+
+            // Mostrar o conteúdo lazy após 4 segundos
+            setTimeout(() => {
+                document.getElementById('lazy-content-1').style.display =
+                    'block';
+                // Bloquear o thread principal novamente
+                simulateHeavyProcessing(200);
+            }, 4000);
+
+            // Mostrar o último conteúdo após 5 segundos
+            setTimeout(() => {
+                document.getElementById('lazy-content-2').style.display =
+                    'block';
+
+                // Adicionar uma mensagem final
+                const finalMessage = document.createElement('div');
+                finalMessage.style.backgroundColor = '#f6ffed';
+                finalMessage.style.border = '1px solid #b7eb8f';
+                finalMessage.style.borderRadius = '5px';
+                finalMessage.style.padding = '15px';
+                finalMessage.style.margin = '20px 0';
+                finalMessage.style.textAlign = 'center';
+
+                finalMessage.innerHTML = `
+                    <h3>Carregamento Completo!</h3>
+                    <p>Todos os recursos foram carregados após mais de 5 segundos.</p>
+                    <p>Esta página demonstra como o carregamento lento pode prejudicar a experiência do usuário e o SEO.</p>
+                `;
+
+                document.body.appendChild(finalMessage);
+            }, 5000);
+
+            // Carregar um script externo com atraso
+            setTimeout(() => {
+                const script = document.createElement('script');
+                script.src = '../js/slow-loading.js';
+                document.body.appendChild(script);
+            }, 4500);
+        </script>
+
+        <!-- Script que bloqueia a renderização por um tempo -->
+        <script>
+            // Simular um script que bloqueia a renderização
+            console.log('Iniciando script bloqueante...');
+            const blockStart = Date.now();
+            while (Date.now() - blockStart < 1000) {
+                // Loop intensivo que bloqueia o thread principal por 1 segundo
+                Math.random() * Math.random();
+            }
+            console.log('Script bloqueante concluído após 1 segundo');
+        </script>
+    </body>
+</html>

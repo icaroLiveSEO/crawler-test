@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Hreflang Tags</title>
+
+        <!-- Tags hreflang para diferentes idiomas e regiões -->
+        <link
+            rel="alternate"
+            hreflang="pt-br"
+            href="https://exemplo.com.br/hreflang-tags.html"
+        />
+        <link
+            rel="alternate"
+            hreflang="en-us"
+            href="https://example.com/hreflang-tags.html"
+        />
+        <link
+            rel="alternate"
+            hreflang="es"
+            href="https://ejemplo.com/hreflang-tags.html"
+        />
+        <link
+            rel="alternate"
+            hreflang="fr"
+            href="https://exemple.fr/hreflang-tags.html"
+        />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://example.com/hreflang-tags.html"
+        />
+
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .hreflang-box {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .tag {
+                font-family: monospace;
+                background-color: #f9f9f9;
+                padding: 5px;
+                margin: 5px 0;
+                border: 1px solid #d9d9d9;
+                border-radius: 3px;
+                display: block;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Hreflang Tags</h1>
+
+        <div class="hreflang-box">
+            <h2>Tags hreflang presentes nesta página:</h2>
+            <code class="tag"
+                >&lt;link rel="alternate" hreflang="pt-br"
+                href="https://exemplo.com.br/hreflang-tags.html" /&gt;</code
+            >
+            <code class="tag"
+                >&lt;link rel="alternate" hreflang="en-us"
+                href="https://example.com/hreflang-tags.html" /&gt;</code
+            >
+            <code class="tag"
+                >&lt;link rel="alternate" hreflang="es"
+                href="https://ejemplo.com/hreflang-tags.html" /&gt;</code
+            >
+            <code class="tag"
+                >&lt;link rel="alternate" hreflang="fr"
+                href="https://exemple.fr/hreflang-tags.html" /&gt;</code
+            >
+            <code class="tag"
+                >&lt;link rel="alternate" hreflang="x-default"
+                href="https://example.com/hreflang-tags.html" /&gt;</code
+            >
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página demonstra o uso de tags hreflang para indicar versões
+            alternativas da mesma página em diferentes idiomas e regiões.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar todas as tags hreflang</li>
+            <li>Identificar os idiomas e regiões especificados</li>
+            <li>Associar cada URL com o idioma/região correspondente</li>
+        </ul>
+
+        <h3>Explicação das tags hreflang:</h3>
+        <table>
+            <tr>
+                <th>Valor hreflang</th>
+                <th>Significado</th>
+                <th>URL</th>
+            </tr>
+            <tr>
+                <td>pt-br</td>
+                <td>Português do Brasil</td>
+                <td>https://exemplo.com.br/hreflang-tags.html</td>
+            </tr>
+            <tr>
+                <td>en-us</td>
+                <td>Inglês dos Estados Unidos</td>
+                <td>https://example.com/hreflang-tags.html</td>
+            </tr>
+            <tr>
+                <td>es</td>
+                <td>Espanhol (qualquer região)</td>
+                <td>https://ejemplo.com/hreflang-tags.html</td>
+            </tr>
+            <tr>
+                <td>fr</td>
+                <td>Francês (qualquer região)</td>
+                <td>https://exemple.fr/hreflang-tags.html</td>
+            </tr>
+            <tr>
+                <td>x-default</td>
+                <td>Versão padrão (para usuários sem correspondência)</td>
+                <td>https://example.com/hreflang-tags.html</td>
+            </tr>
+        </table>
+
+        <h3>Importância do hreflang:</h3>
+        <p>As tags hreflang ajudam os motores de busca a:</p>
+        <ul>
+            <li>
+                Entender que várias URLs são versões da mesma página em
+                diferentes idiomas
+            </li>
+            <li>
+                Mostrar a versão correta da página para usuários de diferentes
+                regiões e idiomas
+            </li>
+            <li>
+                Evitar problemas de conteúdo duplicado entre versões em
+                diferentes idiomas
+            </li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

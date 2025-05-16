@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Imagens com Srcset</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .image-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .image-container {
+                margin: 15px 0;
+                text-align: center;
+            }
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #ddd;
+            }
+            .code-block {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                margin: 15px 0;
+            }
+            .info-box {
+                background-color: #e6f7ff;
+                border: 1px solid #91d5ff;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Imagens com Srcset</h1>
+
+        <div class="image-section">
+            <h2>Imagem com srcset baseado em largura</h2>
+
+            <div class="image-container">
+                <img
+                    srcset="
+                        https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80   400w,
+                        https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80   800w,
+                        https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 1200w
+                    "
+                    sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px"
+                    src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Imagem responsiva com srcset e sizes"
+                />
+                <p><strong>Imagem com srcset e sizes</strong></p>
+            </div>
+
+            <div class="code-block">
+                &lt;img srcset="
+                https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80
+                400w,
+                https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80
+                800w,
+                https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80
+                1200w " sizes="(max-width: 600px) 400px, (max-width: 1000px)
+                800px, 1200px"
+                src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Imagem responsiva com srcset e sizes" /&gt;
+            </div>
+        </div>
+
+        <div class="image-section">
+            <h2>Imagem com srcset baseado em densidade de pixels</h2>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    srcset="
+                        https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80  1x,
+                        https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 2x,
+                        https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80 3x
+                    "
+                    alt="Imagem responsiva com srcset baseado em densidade de pixels"
+                />
+                <p>
+                    <strong
+                        >Imagem com srcset baseado em densidade de pixels
+                        (x)</strong
+                    >
+                </p>
+            </div>
+
+            <div class="code-block">
+                &lt;img
+                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                srcset="
+                https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80
+                1x,
+                https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80
+                2x,
+                https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80
+                3x" alt="Imagem responsiva com srcset baseado em densidade de
+                pixels" /&gt;
+            </div>
+        </div>
+
+        <div class="image-section">
+            <h2>Imagem com picture e source</h2>
+
+            <div class="image-container">
+                <picture>
+                    <source
+                        media="(max-width: 600px)"
+                        srcset="
+                            https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=480&q=80
+                        "
+                    />
+                    <source
+                        media="(max-width: 1000px)"
+                        srcset="
+                            https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80
+                        "
+                    />
+                    <source
+                        media="(min-width: 1001px)"
+                        srcset="
+                            https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80
+                        "
+                    />
+                    <img
+                        src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Imagem com elemento picture e múltiplas sources"
+                    />
+                </picture>
+                <p>
+                    <strong
+                        >Imagem com elemento picture e múltiplas sources</strong
+                    >
+                </p>
+            </div>
+
+            <div class="code-block">
+                &lt;picture&gt; &lt;source media="(max-width: 600px)"
+                srcset="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=480&q=80"
+                /&gt; &lt;source media="(max-width: 1000px)"
+                srcset="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                /&gt; &lt;source media="(min-width: 1001px)"
+                srcset="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                /&gt; &lt;img
+                src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Imagem com elemento picture e múltiplas sources" /&gt;
+                &lt;/picture&gt;
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>Como funciona o srcset</h3>
+            <p>
+                O atributo <code>srcset</code> permite especificar múltiplas
+                versões de uma imagem para diferentes condições:
+            </p>
+            <ul>
+                <li>
+                    <strong>Descritores de largura (w)</strong>: Indicam a
+                    largura da imagem em pixels
+                </li>
+                <li>
+                    <strong>Descritores de densidade (x)</strong>: Indicam a
+                    densidade de pixels (1x = densidade normal, 2x = tela
+                    retina)
+                </li>
+                <li>
+                    O navegador escolhe automaticamente a melhor imagem com base
+                    no tamanho da tela e na densidade de pixels
+                </li>
+            </ul>
+            <p>
+                O atributo <code>sizes</code> ajuda o navegador a determinar
+                qual tamanho a imagem ocupará na tela antes de carregar.
+            </p>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com imagens que usam o
+            atributo srcset para fornecer diferentes versões da mesma imagem.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>
+                Detectar todas as variantes de imagem especificadas no srcset
+            </li>
+            <li>
+                Entender a relação entre as diferentes versões da mesma imagem
+            </li>
+            <li>
+                Possivelmente verificar se há versões apropriadas para
+                diferentes dispositivos
+            </li>
+            <li>
+                Identificar o uso de imagens responsivas como uma boa prática
+            </li>
+        </ul>
+
+        <h3>Links para outros testes de imagem:</h3>
+        <ul>
+            <li><a href="image-basics.html">Teste de imagens básicas</a></li>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Imagens Básicas</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .image-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .image-container {
+                margin: 15px 0;
+                text-align: center;
+            }
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #ddd;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .code {
+                font-family: monospace;
+                background-color: #f1f1f1;
+                padding: 2px 4px;
+                border-radius: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Imagens Básicas</h1>
+
+        <div class="image-section">
+            <h2>Imagens com atributos src, alt e title</h2>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Imagem com atributo alt"
+                    title="Esta imagem tem um título que aparece ao passar o mouse"
+                />
+                <p><strong>Imagem com atributos alt e title</strong></p>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt=""
+                />
+                <p><strong>Imagem com atributo alt vazio</strong></p>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                />
+                <p><strong>Imagem sem atributo alt</strong></p>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Imagem com atributo width e height"
+                    width="400"
+                    height="300"
+                />
+                <p><strong>Imagem com atributos width e height</strong></p>
+            </div>
+
+            <div class="image-container">
+                <a href="https://example.com">
+                    <img
+                        src="https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Imagem dentro de um link"
+                    />
+                </a>
+                <p><strong>Imagem dentro de um link</strong></p>
+            </div>
+
+            <div class="image-container">
+                <figure>
+                    <img
+                        src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Imagem com figure e figcaption"
+                    />
+                    <figcaption>
+                        Esta é uma legenda para a imagem acima
+                    </figcaption>
+                </figure>
+                <p><strong>Imagem com figure e figcaption</strong></p>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <h2>Importância dos atributos de imagem</h2>
+
+            <table>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Propósito</th>
+                    <th>Importância para SEO</th>
+                </tr>
+                <tr>
+                    <td><code>src</code></td>
+                    <td>Define o caminho da imagem</td>
+                    <td>
+                        Essencial - Permite que o crawler encontre e indexe a
+                        imagem
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>alt</code></td>
+                    <td>Texto alternativo para a imagem</td>
+                    <td>
+                        Crítico - Ajuda os motores de busca a entenderem o
+                        conteúdo da imagem
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>title</code></td>
+                    <td>Texto de dica ao passar o mouse</td>
+                    <td>
+                        Secundário - Fornece contexto adicional, mas menos
+                        importante que alt
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>width/height</code></td>
+                    <td>Dimensões da imagem</td>
+                    <td>
+                        Útil - Ajuda a evitar layout shifts e melhora a
+                        experiência do usuário
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com imagens que possuem
+            diferentes combinações de atributos src, alt e title.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar todas as imagens na página</li>
+            <li>Extrair os valores dos atributos src, alt e title</li>
+            <li>
+                Identificar imagens sem texto alternativo (alt) como um problema
+                de acessibilidade e SEO
+            </li>
+            <li>
+                Possivelmente avaliar a relevância do texto alternativo em
+                relação ao contexto da página
+            </li>
+        </ul>
+
+        <h3>Links para outros testes de imagem:</h3>
+        <ul>
+            <li>
+                <a href="image-formats.html">Teste de formatos de imagem</a>
+            </li>
+            <li><a href="image-srcset.html">Teste de imagens com srcset</a></li>
+            <li>
+                <a href="image-data-uri.html">Teste de imagens com data URI</a>
+            </li>
+            <li><a href="image-errors.html">Teste de imagens com erros</a></li>
+            <li>
+                <a href="image-dimensions.html"
+                    >Teste de dimensões e compressão de imagens</a
+                >
+            </li>
+        </ul>
+
+        <p><a href="/index.html">Voltar para a página inicial</a></p>
+    </body>
+</html>

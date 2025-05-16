@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Carregamento de Recursos</title>
+
+        <!-- CSS válido com carregamento normal -->
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <!-- CSS com URL inválida -->
+        <link rel="stylesheet" href="css/non-existent.css" />
+
+        <!-- CSS com carregamento lento (simulado) -->
+        <link rel="stylesheet" href="css/slow-loading.css" />
+
+        <!-- JavaScript válido com carregamento normal -->
+        <script src="js/script.js"></script>
+
+        <!-- JavaScript com URL inválida -->
+        <script src="js/non-existent.js"></script>
+
+        <!-- JavaScript com carregamento lento (simulado) -->
+        <script src="js/slow-loading.js" defer></script>
+
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .resource-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .resource-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            .resource-table th,
+            .resource-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            .resource-table th {
+                background-color: #f2f2f2;
+            }
+            .status-ok {
+                color: #52c41a;
+                font-weight: bold;
+            }
+            .status-error {
+                color: #f5222d;
+                font-weight: bold;
+            }
+            .status-slow {
+                color: #faad14;
+                font-weight: bold;
+            }
+            .code-block {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                margin: 15px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Carregamento de Recursos</h1>
+
+        <div class="resource-section">
+            <h2>Sobre o Carregamento de Recursos</h2>
+            <p>
+                Esta página testa como o crawler lida com diferentes tipos de
+                recursos (CSS, JavaScript) que têm comportamentos variados de
+                carregamento, incluindo recursos que carregam normalmente,
+                recursos que carregam lentamente e recursos que falham ao
+                carregar.
+            </p>
+        </div>
+
+        <div class="resource-section">
+            <h2>Recursos Carregados</h2>
+
+            <table class="resource-table">
+                <tr>
+                    <th>Tipo</th>
+                    <th>URL</th>
+                    <th>Status</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>css/styles.css</td>
+                    <td class="status-ok">OK</td>
+                    <td>Arquivo CSS válido com carregamento normal</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>css/non-existent.css</td>
+                    <td class="status-error">Erro 404</td>
+                    <td>Arquivo CSS inexistente (URL inválida)</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>css/slow-loading.css</td>
+                    <td class="status-slow">Lento</td>
+                    <td>Arquivo CSS com carregamento lento (simulado)</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>js/script.js</td>
+                    <td class="status-ok">OK</td>
+                    <td>Arquivo JavaScript válido com carregamento normal</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>js/non-existent.js</td>
+                    <td class="status-error">Erro 404</td>
+                    <td>Arquivo JavaScript inexistente (URL inválida)</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>js/slow-loading.js</td>
+                    <td class="status-slow">Lento</td>
+                    <td>
+                        Arquivo JavaScript com carregamento lento (simulado)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="resource-section">
+            <h2>Código HTML</h2>
+            <p>
+                Abaixo está o código HTML usado para carregar os recursos nesta
+                página:
+            </p>
+
+            <div class="code-block">
+                &lt;!-- CSS válido com carregamento normal --&gt; &lt;link
+                rel="stylesheet" href="css/styles.css"&gt; &lt;!-- CSS com URL
+                inválida --&gt; &lt;link rel="stylesheet"
+                href="css/non-existent.css"&gt; &lt;!-- CSS com carregamento
+                lento (simulado) --&gt; &lt;link rel="stylesheet"
+                href="css/slow-loading.css"&gt; &lt;!-- JavaScript válido com
+                carregamento normal --&gt; &lt;script
+                src="js/script.js"&gt;&lt;/script&gt; &lt;!-- JavaScript com URL
+                inválida --&gt; &lt;script
+                src="js/non-existent.js"&gt;&lt;/script&gt; &lt;!-- JavaScript
+                com carregamento lento (simulado) --&gt; &lt;script
+                src="js/slow-loading.js" defer&gt;&lt;/script&gt;
+            </div>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com diferentes tipos de
+            recursos e seus comportamentos de carregamento.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar todos os recursos externos carregados pela página</li>
+            <li>
+                Identificar recursos que falham ao carregar (URLs inválidas)
+            </li>
+            <li>Possivelmente detectar recursos com carregamento lento</li>
+            <li>Analisar o impacto dos recursos no desempenho da página</li>
+            <li>
+                Verificar se há recursos bloqueando o renderização da página
+            </li>
+        </ul>
+
+        <h3>Links para outros testes:</h3>
+        <ul>
+            <li>
+                <a href="/pagination/pagination-page1.html"
+                    >Teste de Paginação</a
+                >
+            </li>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+
+        <!-- JavaScript que simula carregamento lento -->
+        <script>
+            // Simular carregamento lento de recursos
+            setTimeout(() => {
+                console.log('Recursos lentos carregados após 3 segundos');
+
+                // Criar um elemento para indicar que os recursos lentos foram carregados
+                const indicator = document.createElement('div');
+                indicator.style.padding = '10px';
+                indicator.style.backgroundColor = '#f6ffed';
+                indicator.style.border = '1px solid #b7eb8f';
+                indicator.style.borderRadius = '5px';
+                indicator.style.margin = '20px 0';
+                indicator.innerHTML =
+                    '<strong>Recursos lentos carregados!</strong> Esta mensagem aparece após 3 segundos.';
+
+                document.body.appendChild(indicator);
+            }, 3000);
+        </script>
+    </body>
+</html>

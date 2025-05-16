@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Links em Iframe</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .iframe-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .warning {
+                background-color: #fffbe6;
+                border: 1px solid #ffe58f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+            iframe {
+                width: 100%;
+                height: 300px;
+                border: 1px solid #d9d9d9;
+                border-radius: 4px;
+                margin: 15px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Links em Iframe</h1>
+
+        <div class="warning">
+            <strong>Atenção:</strong> Esta página contém links dentro de
+            iframes. Crawlers precisam analisar o conteúdo dos iframes para
+            detectar esses links.
+        </div>
+
+        <div class="iframe-section">
+            <h2>Iframe com Conteúdo Interno</h2>
+            <p>Este iframe carrega uma página interna do site:</p>
+            <iframe
+                src="link-types.html"
+                title="Página de tipos de links"
+            ></iframe>
+        </div>
+
+        <div class="iframe-section">
+            <h2>Iframe com Conteúdo Externo</h2>
+            <p>
+                Este iframe tenta carregar uma página externa (pode ser
+                bloqueado por políticas de segurança):
+            </p>
+            <iframe
+                src="https://example.com"
+                title="Exemplo de site externo"
+            ></iframe>
+        </div>
+
+        <div class="iframe-section">
+            <h2>Iframe com Conteúdo HTML Inline</h2>
+            <p>Este iframe contém HTML definido diretamente:</p>
+            <iframe
+                srcdoc="
+            <html>
+                <head>
+                    <style>
+                        body { font-family: Arial; padding: 20px; }
+                        a { color: blue; }
+                    </style>
+                </head>
+                <body>
+                    <h2>Links dentro do iframe inline</h2>
+                    <ul>
+                        <li><a href='https://www.google.com'>Link para Google</a></li>
+                        <li><a href='https://www.wikipedia.org'>Link para Wikipedia</a></li>
+                        <li><a href='/index.html'>Link relativo para página inicial</a></li>
+                    </ul>
+                </body>
+            </html>
+        "
+                title="Iframe com HTML inline"
+            ></iframe>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com links que estão dentro de
+            iframes. Os iframes representam um desafio para crawlers porque:
+        </p>
+        <ul>
+            <li>
+                O conteúdo do iframe pode estar em um contexto diferente da
+                página principal
+            </li>
+            <li>
+                Iframes podem carregar conteúdo de domínios diferentes
+                (cross-origin)
+            </li>
+            <li>
+                Alguns crawlers podem não analisar o conteúdo de iframes por
+                padrão
+            </li>
+            <li>
+                Links dentro de iframes podem não ser considerados parte da
+                página principal
+            </li>
+        </ul>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar a presença de iframes na página</li>
+            <li>Analisar o conteúdo dos iframes (quando possível)</li>
+            <li>Identificar links dentro dos iframes</li>
+            <li>
+                Possivelmente diferenciar entre links na página principal e
+                links em iframes
+            </li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="link-types.html">Ir para página de tipos de links</a>
+            </li>
+        </ul>
+    </body>
+</html>

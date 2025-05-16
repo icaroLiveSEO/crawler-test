@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemap.xml</loc>
+    <lastmod>2023-06-15T12:30:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/estrutura.xml</loc>
+    <lastmod>2023-06-10T10:30:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/conteudo.xml</loc>
+    <lastmod>2023-06-12T15:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/metadados.xml</loc>
+    <lastmod>2023-06-13T09:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/descricoes.xml</loc>
+    <lastmod>2023-06-13T10:30:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/robots.xml</loc>
+    <lastmod>2023-06-13T11:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/hreflang.xml</loc>
+    <lastmod>2023-06-13T11:30:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/canonical.xml</loc>
+    <lastmod>2023-06-13T12:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/structured.xml</loc>
+    <lastmod>2023-06-13T12:30:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/links.xml</loc>
+    <lastmod>2023-06-14T11:30:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/imagens.xml</loc>
+    <lastmod>2023-06-14T10:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/iframes.xml</loc>
+    <lastmod>2023-06-14T10:30:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/paginacao.xml</loc>
+    <lastmod>2023-06-14T11:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/recursos.xml</loc>
+    <lastmod>2023-06-15T10:30:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/content-types.xml</loc>
+    <lastmod>2023-06-15T11:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/inexistente.xml</loc>
+    <lastmod>2023-06-01T08:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>127.0.0.1:5500/sitemaps/formato-invalido.xml</loc>
+    <lastmod>2023-06-01T08:10:00+00:00</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://127.0.0.1:5500/sitemaps/data-invalida.xml</loc>
+    <lastmod>2023-13-40T25:70:00+00:00</lastmod>
+  </sitemap>
+</sitemapindex> 

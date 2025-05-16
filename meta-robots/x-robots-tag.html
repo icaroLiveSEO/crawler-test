@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de X-Robots-Tag via HTTP Header</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .robots-box {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .header {
+                font-family: monospace;
+                background-color: #f9f9f9;
+                padding: 10px;
+                border: 1px solid #d9d9d9;
+                border-radius: 3px;
+            }
+            .note {
+                background-color: #fffbe6;
+                border: 1px solid #ffe58f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de X-Robots-Tag via HTTP Header</h1>
+
+        <div class="robots-box">
+            <h2>Esta página usa X-Robots-Tag via HTTP Header</h2>
+            <p>
+                O servidor está configurado para enviar o seguinte cabeçalho
+                HTTP com esta página:
+            </p>
+            <div class="header">X-Robots-Tag: noindex</div>
+        </div>
+
+        <div class="note">
+            <strong>Nota:</strong> Para que este teste funcione corretamente, o
+            servidor web deve estar configurado para enviar o cabeçalho HTTP
+            X-Robots-Tag com esta página. Isso geralmente requer configuração no
+            servidor web (Apache, Nginx, etc.) ou em um arquivo .htaccess.
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página demonstra o uso do cabeçalho HTTP X-Robots-Tag em vez da
+            meta tag robots. Ambos têm o mesmo efeito, mas o cabeçalho HTTP pode
+            ser aplicado a qualquer tipo de arquivo, não apenas a páginas HTML.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar o cabeçalho HTTP X-Robots-Tag</li>
+            <li>NÃO indexar esta página (devido à diretiva noindex)</li>
+        </ul>
+
+        <h3>Vantagens do X-Robots-Tag:</h3>
+        <ul>
+            <li>
+                Pode ser aplicado a qualquer tipo de arquivo (PDF, imagens,
+                vídeos, etc.)
+            </li>
+            <li>
+                Pode ser configurado em nível de servidor para grupos de
+                arquivos
+            </li>
+            <li>
+                Útil para arquivos não-HTML que precisam de controle de
+                indexação
+            </li>
+        </ul>
+
+        <h3>Configuração de exemplo para Apache (.htaccess):</h3>
+        <pre>
+&lt;Files "x-robots-tag.html"&gt;
+    Header set X-Robots-Tag "noindex"
+&lt;/Files&gt;
+    </pre
+        >
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

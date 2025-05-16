@@ -1,0 +1,37 @@
+# Arquivo robots.txt para testes SEO
+# Este arquivo contém várias diretivas para diferentes user-agents
+
+# Regras para todos os crawlers
+User-agent: *
+Allow: /
+Disallow: /
+
+# Regras específicas para Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /not-for-google/
+Allow: /duplicated-content/
+
+# Regras para Googlebot-Image
+User-agent: Googlebot-Image
+Allow: /image/
+Disallow: /image/image-errors.html
+
+# Regras para Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /not-for-bing/
+Disallow: /meta-robots/
+
+# Regras para Yandex
+User-agent: Yandex
+Disallow: /
+
+# Regras para bots específicos de teste
+User-agent: TestBot
+Allow: /test-only/
+Disallow: /
+
+# Sitemap
+Sitemap: http://127.0.0.1:5500/sitemap.xml
+Sitemap: http://127.0.0.1:5500/sitemap-index.xml 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Contagem de Palavras</title>
+        <meta
+            name="twitter:title"
+            content="Teste de Palavras - Twitter Title"
+        />
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+            }
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Título Principal da Página</h1>
+            <p>Este é um parágrafo curto com apenas algumas palavras.</p>
+
+            <div class="hidden">
+                Este texto está escondido via CSS e não deve ser contado como
+                conteúdo visível.
+            </div>
+
+            <script>
+                const texto =
+                    'Este texto está dentro de um script e não deve ser contado';
+            </script>
+
+            <div>
+                <p>Um parágrafo com texto normal.</p>
+                <pre>
+Texto em elemento pre
+com quebras de linha
+deve ser contado corretamente</pre
+                >
+                <code>Código fonte também deve ser contado como texto</code>
+            </div>
+
+            <button>Texto em botão</button>
+            <input type="text" placeholder="contagem de placeholder?" />
+            <textarea>Texto em textarea deve ser contado</textarea>
+        </main>
+    </body>
+</html>

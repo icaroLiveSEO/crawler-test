@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Links Válidos</title>
+        <meta
+            name="description"
+            content="Página para testar como crawlers seguem diferentes tipos de links válidos."
+        />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #333;
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: #2c3e50;
+            }
+
+            .link-section {
+                background-color: #f8f9fa;
+                border: 1px solid #e9ecef;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .link-example {
+                background-color: #e9f5ff;
+                border-left: 4px solid #1890ff;
+                padding: 10px 15px;
+                margin: 10px 0;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            .footer {
+                margin-top: 40px;
+                border-top: 1px solid #eee;
+                padding-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Links Válidos</h1>
+
+        <p>
+            Esta página contém diferentes tipos de links válidos para testar
+            como os crawlers seguem e indexam links. Todos os links nesta página
+            apontam para destinos válidos que existem no site.
+        </p>
+
+        <div class="link-section">
+            <h2>Links Internos Relativos</h2>
+
+            <h3>Links para o Mesmo Nível</h3>
+            <div class="link-example">
+                <a href="broken-links.html">Página de Links Quebrados</a> (link
+                para outra página na mesma pasta)
+            </div>
+            <div class="link-example">
+                <a href="javascript-links.html">Página de Links JavaScript</a>
+                (link para outra página na mesma pasta)
+            </div>
+
+            <h3>Links para Nível Acima</h3>
+            <div class="link-example">
+                <a href="../index.html">Página Inicial</a> (link para um nível
+                acima)
+            </div>
+            <div class="link-example">
+                <a href="../content/no-paragraph-tags.html"
+                    >Conteúdo Sem Tags de Parágrafo</a
+                >
+                (link para outra pasta no mesmo nível)
+            </div>
+
+            <h3>Links para Nível Abaixo</h3>
+            <div class="link-example">
+                <a href="subdir/page1.html">Subdiretório - Página 1</a> (link
+                para um nível abaixo)
+            </div>
+            <div class="link-example">
+                <a href="subdir/page2.html">Subdiretório - Página 2</a> (link
+                para um nível abaixo)
+            </div>
+        </div>
+
+        <div class="link-section">
+            <h2>Links Internos Absolutos</h2>
+
+            <div class="link-example">
+                <a href="/index.html">Página Inicial (caminho absoluto)</a>
+            </div>
+            <div class="link-example">
+                <a href="/content/no-paragraph-tags.html"
+                    >Conteúdo Sem Tags de Parágrafo (caminho absoluto)</a
+                >
+            </div>
+        </div>
+
+        <div class="link-section">
+            <h2>Links Externos</h2>
+
+            <div class="link-example">
+                <a href="https://www.example.com">Example.com</a> (link externo)
+            </div>
+            <div class="link-example">
+                <a href="https://www.mozilla.org">Mozilla.org</a> (link externo)
+            </div>
+        </div>
+
+        <div class="link-section">
+            <h2>Links com Atributos Especiais</h2>
+
+            <div class="link-example">
+                <a href="subdir/page3.html" rel="nofollow"
+                    >Página com Nofollow</a
+                >
+                (link com atributo rel="nofollow")
+            </div>
+            <div class="link-example">
+                <a href="https://www.example.org" target="_blank"
+                    >Link que Abre em Nova Aba</a
+                >
+                (link com target="_blank")
+            </div>
+            <div class="link-example">
+                <a href="subdir/page4.html" title="Descrição da página 4"
+                    >Link com Atributo Title</a
+                >
+                (link com atributo title)
+            </div>
+        </div>
+
+        <div class="link-section">
+            <h2>Resumo dos Links</h2>
+
+            <table>
+                <tr>
+                    <th>Tipo de Link</th>
+                    <th>Exemplo</th>
+                    <th>Comportamento Esperado</th>
+                </tr>
+                <tr>
+                    <td>Mesmo nível</td>
+                    <td><code>broken-links.html</code></td>
+                    <td>Crawler deve seguir e indexar</td>
+                </tr>
+                <tr>
+                    <td>Nível acima</td>
+                    <td><code>../index.html</code></td>
+                    <td>Crawler deve seguir e indexar</td>
+                </tr>
+                <tr>
+                    <td>Nível abaixo</td>
+                    <td><code>subdir/page1.html</code></td>
+                    <td>Crawler deve seguir e indexar</td>
+                </tr>
+                <tr>
+                    <td>Absoluto interno</td>
+                    <td><code>/index.html</code></td>
+                    <td>Crawler deve seguir e indexar</td>
+                </tr>
+                <tr>
+                    <td>Externo</td>
+                    <td><code>https://www.example.com</code></td>
+                    <td>Crawler deve identificar como externo</td>
+                </tr>
+                <tr>
+                    <td>Com nofollow</td>
+                    <td><code>rel="nofollow"</code></td>
+                    <td>Crawler não deve seguir, mas deve registrar</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            <h3>Links para outros testes:</h3>
+            <ul>
+                <li>
+                    <a href="../content/dense-text.html"
+                        >Teste de Texto Denso</a
+                    >
+                </li>
+                <li>
+                    <a href="../content/no-paragraph-tags.html"
+                        >Conteúdo Sem Tags de Parágrafo</a
+                    >
+                </li>
+                <li>
+                    <a href="../index.html">Voltar para a página inicial</a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

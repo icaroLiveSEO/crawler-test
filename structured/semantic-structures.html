@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Estruturas HTML Semânticas</title>
+        <meta
+            name="description"
+            content="Exemplo de página com uso correto de tags semânticas HTML5 e estrutura bem organizada."
+        />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                color: #333;
+            }
+
+            /* Estilos para elementos semânticos */
+            header {
+                background-color: #f0f5ff;
+                padding: 20px;
+                border-bottom: 1px solid #adc6ff;
+            }
+
+            nav {
+                background-color: #e6f7ff;
+                padding: 10px 20px;
+                border-bottom: 1px solid #91d5ff;
+            }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                gap: 20px;
+            }
+
+            main {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                gap: 20px;
+            }
+
+            article {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            section {
+                margin-bottom: 30px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #eee;
+            }
+
+            aside {
+                background-color: #fffbe6;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                align-self: start;
+            }
+
+            footer {
+                background-color: #f9f9f9;
+                padding: 20px;
+                text-align: center;
+                border-top: 1px solid #eee;
+                margin-top: 30px;
+            }
+
+            .code-example {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                margin: 15px 0;
+            }
+
+            .tag-explanation {
+                background-color: #e6f7ff;
+                padding: 10px;
+                border-left: 4px solid #1890ff;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Cabeçalho da página -->
+        <header>
+            <h1>Estruturas HTML Semânticas</h1>
+            <p>Um guia sobre o uso correto de tags semânticas HTML5</p>
+        </header>
+
+        <!-- Navegação principal -->
+        <nav>
+            <ul>
+                <li><a href="#header">Header</a></li>
+                <li><a href="#nav">Nav</a></li>
+                <li><a href="#main">Main</a></li>
+                <li><a href="#article">Article</a></li>
+                <li><a href="#section">Section</a></li>
+                <li><a href="#aside">Aside</a></li>
+                <li><a href="#footer">Footer</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo principal -->
+        <main>
+            <!-- Artigo principal -->
+            <article>
+                <h2>Guia de Tags Semânticas HTML5</h2>
+                <p>
+                    O HTML5 introduziu várias tags semânticas que ajudam a
+                    definir a estrutura e o significado do conteúdo da web. Usar
+                    essas tags corretamente melhora a acessibilidade, o SEO e a
+                    manutenção do código.
+                </p>
+
+                <!-- Seção sobre Header -->
+                <section id="header">
+                    <h3>Tag &lt;header&gt;</h3>
+                    <p>
+                        A tag <code>&lt;header&gt;</code> representa um
+                        contêiner para conteúdo introdutório ou um conjunto de
+                        links de navegação. Geralmente contém o logotipo, título
+                        do site e navegação principal.
+                    </p>
+                    <div class="tag-explanation">
+                        <strong>Uso correto:</strong> Para cabeçalhos de página
+                        ou seções importantes.
+                    </div>
+                    <div class="code-example">
+                        &lt;header&gt;<br />
+                        &nbsp;&nbsp;&lt;h1&gt;Título do Site&lt;/h1&gt;<br />
+                        &nbsp;&nbsp;&lt;p&gt;Slogan ou descrição&lt;/p&gt;<br />
+                        &lt;/header&gt;
+                    </div>
+                </section>
+
+                <!-- Seção sobre Nav -->
+                <section id="nav">
+                    <h3>Tag &lt;nav&gt;</h3>
+                    <p>
+                        A tag <code>&lt;nav&gt;</code> define uma seção de
+                        navegação. É usada para menus de navegação principais,
+                        menus laterais, índices de página e outras listas de
+                        links de navegação.
+                    </p>
+                    <div class="tag-explanation">
+                        <strong>Uso correto:</strong> Para conjuntos de links de
+                        navegação principais.
+                    </div>
+                    <div class="code-example">
+                        &lt;nav&gt;<br />
+                        &nbsp;&nbsp;&lt;ul&gt;<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+                        href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+                        href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+                        href="#"&gt;Contato&lt;/a&gt;&lt;/li&gt;<br />
+                        &nbsp;&nbsp;&lt;/ul&gt;<br />
+                        &lt;/nav&gt;
+                    </div>
+                </section>
+
+                <!-- Seção sobre Main -->
+                <section id="main">
+                    <h3>Tag &lt;main&gt;</h3>
+                    <p>
+                        A tag <code>&lt;main&gt;</code> especifica o conteúdo
+                        principal de um documento. O conteúdo dentro do elemento
+                        <code>&lt;main&gt;</code> deve ser único ao documento e
+                        não deve incluir conteúdo repetido em outros documentos,
+                        como barras laterais, links de navegação, informações de
+                        copyright, logotipos e formulários de pesquisa.
+                    </p>
+                    <div class="tag-explanation">
+                        <strong>Uso correto:</strong> Deve haver apenas um
+                        elemento &lt;main&gt; por página.
+                    </div>
+                    <div class="code-example">
+                        &lt;main&gt;<br />
+                        &nbsp;&nbsp;&lt;article&gt;...&lt;/article&gt;<br />
+                        &nbsp;&nbsp;&lt;aside&gt;...&lt;/aside&gt;<br />
+                        &lt;/main&gt;
+                    </div>
+                </section>
+
+                <!-- Seção sobre Article -->
+                <section id="article">
+                    <h3>Tag &lt;article&gt;</h3>
+                    <p>
+                        A tag <code>&lt;article&gt;</code> especifica conteúdo
+                        independente e autocontido. Um artigo deve fazer sentido
+                        por si só e deve ser possível distribuí-lo
+                        independentemente do resto do site.
+                    </p>
+                    <div class="tag-explanation">
+                        <strong>Uso correto:</strong> Para posts de blog,
+                        notícias, comentários de usuários, etc.
+                    </div>
+                    <div class="code-example">
+                        &lt;article&gt;<br />
+                        &nbsp;&nbsp;&lt;h2&gt;Título do Artigo&lt;/h2&gt;<br />
+                        &nbsp;&nbsp;&lt;p&gt;Conteúdo do artigo...&lt;/p&gt;<br />
+                        &lt;/article&gt;
+                    </div>
+                </section>
+
+                <!-- Seção sobre Section -->
+                <section id="section">
+                    <h3>Tag &lt;section&gt;</h3>
+                    <p>
+                        A tag <code>&lt;section&gt;</code> define uma seção em
+                        um documento. De acordo com a documentação HTML5, uma
+                        seção é um agrupamento temático de conteúdo, tipicamente
+                        com um cabeçalho.
+                    </p>
+                    <div class="tag-explanation">
+                        <strong>Uso correto:</strong> Para dividir conteúdo em
+                        seções temáticas.
+                    </div>
+                    <div class="code-example">
+                        &lt;section&gt;<br />
+                        &nbsp;&nbsp;&lt;h2&gt;Título da Seção&lt;/h2&gt;<br />
+                        &nbsp;&nbsp;&lt;p&gt;Conteúdo da seção...&lt;/p&gt;<br />
+                        &lt;/section&gt;
+                    </div>
+                </section>
+
+                <!-- Seção sobre Aside -->
+                <section id="aside">
+                    <h3>Tag &lt;aside&gt;</h3>
+                    <p>
+                        A tag <code>&lt;aside&gt;</code> define um conteúdo
+                        levemente relacionado ao conteúdo ao redor. O conteúdo
+                        aside é frequentemente colocado como uma barra lateral.
+                    </p>
+                    <div class="tag-explanation">
+                        <strong>Uso correto:</strong> Para conteúdo relacionado,
+                        barras laterais, anúncios, etc.
+                    </div>
+                    <div class="code-example">
+                        &lt;aside&gt;<br />
+                        &nbsp;&nbsp;&lt;h3&gt;Artigos Relacionados&lt;/h3&gt;<br />
+                        &nbsp;&nbsp;&lt;ul&gt;<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+                        href="#"&gt;Artigo 1&lt;/a&gt;&lt;/li&gt;<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+                        href="#"&gt;Artigo 2&lt;/a&gt;&lt;/li&gt;<br />
+                        &nbsp;&nbsp;&lt;/ul&gt;<br />
+                        &lt;/aside&gt;
+                    </div>
+                </section>
+
+                <!-- Seção sobre Footer -->
+                <section id="footer">
+                    <h3>Tag &lt;footer&gt;</h3>
+                    <p>
+                        A tag <code>&lt;footer&gt;</code> define um rodapé para
+                        um documento ou seção. Um elemento footer geralmente
+                        contém informações sobre o autor, direitos autorais,
+                        links para documentos relacionados, etc.
+                    </p>
+                    <div class="tag-explanation">
+                        <strong>Uso correto:</strong> Para rodapés de página ou
+                        seções.
+                    </div>
+                    <div class="code-example">
+                        &lt;footer&gt;<br />
+                        &nbsp;&nbsp;&lt;p&gt;© 2023 Meu Site. Todos os direitos
+                        reservados.&lt;/p&gt;<br />
+                        &nbsp;&nbsp;&lt;address&gt;Contato:
+                        exemplo@email.com&lt;/address&gt;<br />
+                        &lt;/footer&gt;
+                    </div>
+                </section>
+            </article>
+
+            <!-- Barra lateral -->
+            <aside>
+                <h3>Benefícios do HTML Semântico</h3>
+                <ul>
+                    <li>Melhor acessibilidade para leitores de tela</li>
+                    <li>Código mais fácil de manter</li>
+                    <li>Melhor SEO e indexação por motores de busca</li>
+                    <li>Facilita o estilo com CSS</li>
+                    <li>Torna o código mais legível</li>
+                </ul>
+
+                <h3>Recursos Adicionais</h3>
+                <ul>
+                    <li>
+                        <a
+                            href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element"
+                            >MDN Web Docs - Elementos HTML</a
+                        >
+                    </li>
+                    <li>
+                        <a href="https://www.w3.org/TR/html52/"
+                            >Especificação HTML5</a
+                        >
+                    </li>
+                    <li>
+                        <a href="https://html.spec.whatwg.org/"
+                            >HTML Living Standard</a
+                        >
+                    </li>
+                </ul>
+            </aside>
+        </main>
+
+        <!-- Rodapé da página -->
+        <footer>
+            <p>
+                © 2023 SEO Test Site. Esta página demonstra o uso correto de
+                tags semânticas HTML5.
+            </p>
+            <p><a href="../index.html">Voltar para a página inicial</a></p>
+        </footer>
+    </body>
+</html>

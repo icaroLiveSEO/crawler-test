@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>T</title>
+        <meta property="og:title" content="T" />
+        <meta name="description" content="T" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #333;
+            }
+
+            .content-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+
+            .code-block {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                margin: 15px 0;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            .warning {
+                background-color: #fff7e6;
+                border-left: 4px solid #fa8c16;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+
+            .success {
+                background-color: #f6ffed;
+                border-left: 4px solid #52c41a;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+
+            .error {
+                background-color: #fff1f0;
+                border-left: 4px solid #f5222d;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Problemas de Comprimento de Títulos (Inverso)</h1>
+
+        <div class="content-section">
+            <h2>Sobre Comprimento de Títulos</h2>
+            <p>
+                Esta página demonstra dois problemas comuns relacionados ao
+                comprimento de títulos, mas de forma inversa à página anterior:
+            </p>
+            <ul>
+                <li>
+                    Um título principal (tag title) extremamente curto e não
+                    descritivo
+                </li>
+                <li>
+                    Um título para Open Graph (og:title) extremamente longo que
+                    excede os limites recomendados
+                </li>
+            </ul>
+
+            <h3>Títulos Implementados Nesta Página:</h3>
+            <table>
+                <tr>
+                    <th>Tipo de Título</th>
+                    <th>Valor</th>
+                    <th>Problema</th>
+                </tr>
+                <tr>
+                    <td>Tag title</td>
+                    <td>"T"</td>
+                    <td>Muito curto (1 caractere)</td>
+                </tr>
+                <tr>
+                    <td>OG title</td>
+                    <td>
+                        "Este é um título Open Graph extremamente longo que
+                        excede significativamente o limite recomendado de
+                        caracteres para compartilhamento em redes sociais, o que
+                        pode causar truncamento nas visualizações de
+                        compartilhamento e prejudicar a experiência do usuário
+                        ao ver o conteúdo compartilhado em plataformas como
+                        Facebook, Twitter e LinkedIn"
+                    </td>
+                    <td>Muito longo (270+ caracteres)</td>
+                </tr>
+                <tr>
+                    <td>H1</td>
+                    <td>"Problemas de Comprimento de Títulos (Inverso)"</td>
+                    <td>Comprimento adequado</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h2>Problemas com Títulos Muito Curtos</h2>
+            <div class="error">
+                <strong>Problema:</strong> O título principal desta página tem
+                apenas 1 caractere.
+            </div>
+            <p>Títulos muito curtos apresentam vários problemas:</p>
+            <ul>
+                <li>
+                    Não fornecem informações suficientes sobre o conteúdo da
+                    página
+                </li>
+                <li>
+                    Perdem oportunidades de incluir palavras-chave relevantes
+                </li>
+                <li>
+                    Resultam em baixas taxas de clique nos resultados de busca
+                </li>
+                <li>
+                    Podem ser interpretados como erro ou spam pelos motores de
+                    busca
+                </li>
+                <li>
+                    Dificultam a identificação da página nas abas do navegador
+                </li>
+            </ul>
+
+            <div class="success">
+                <strong>Recomendação:</strong> Manter títulos entre 50-60
+                caracteres, incluindo palavras-chave relevantes e uma descrição
+                clara do conteúdo.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Problemas com Títulos Muito Longos para Redes Sociais</h2>
+            <div class="error">
+                <strong>Problema:</strong> O título Open Graph (og:title) desta
+                página tem mais de 270 caracteres.
+            </div>
+            <p>Títulos Open Graph muito longos também são problemáticos:</p>
+            <ul>
+                <li>
+                    São truncados nas visualizações de compartilhamento
+                    (Facebook geralmente exibe apenas 40-50 caracteres)
+                </li>
+                <li>Diluem a mensagem principal que se deseja comunicar</li>
+                <li>Podem parecer spam ou conteúdo de baixa qualidade</li>
+                <li>Reduzem a eficácia do compartilhamento em redes sociais</li>
+            </ul>
+
+            <div class="success">
+                <strong>Recomendação:</strong> Títulos para redes sociais devem
+                ser concisos e impactantes, com 40-60 caracteres.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Código Implementado</h2>
+            <div class="code-block">
+                &lt;title&gt;T&lt;/title&gt; &lt;meta property="og:title"
+                content="Este é um título Open Graph extremamente longo que
+                excede significativamente o limite recomendado de caracteres
+                para compartilhamento em redes sociais, o que pode causar
+                truncamento nas visualizações de compartilhamento e prejudicar a
+                experiência do usuário ao ver o conteúdo compartilhado em
+                plataformas como Facebook, Twitter e LinkedIn" /&gt;
+            </div>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com títulos de comprimento
+            inadequado, mas de forma inversa à página anterior.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Identificar que o título principal é excessivamente curto</li>
+            <li>Detectar que o título Open Graph é excessivamente longo</li>
+            <li>Sugerir comprimentos adequados para os títulos</li>
+            <li>
+                Reconhecer o impacto negativo desses problemas no SEO e na
+                experiência do usuário
+            </li>
+            <li>
+                Notar que este problema é o inverso do apresentado na página
+                anterior
+            </li>
+        </ul>
+
+        <h3>Links para outros testes:</h3>
+        <ul>
+            <li>
+                <a href="/meta-data/title-length-issues.html"
+                    >Teste de Comprimento de Títulos (Inverso)</a
+                >
+            </li>
+            <li>
+                <a href="/meta-data/duplicate-titles.html"
+                    >Teste de Títulos Duplicados</a
+                >
+            </li>
+            <li><a href="../index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de URL Canônica - Self Reference</title>
+        <link rel="canonical" href="canonical-self.html" />
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .canonical-box {
+                background-color: #e6f7ff;
+                border: 1px solid #91d5ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .tag {
+                font-family: monospace;
+                background-color: #f9f9f9;
+                padding: 10px;
+                border: 1px solid #d9d9d9;
+                border-radius: 3px;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de URL Canônica - Auto-Referência</h1>
+
+        <div class="canonical-box">
+            <h2>Tag canônica presente nesta página:</h2>
+            <div class="tag">
+                &lt;link rel="canonical"
+                href="https://exemplo.com.br/canonical-self.html" /&gt;
+            </div>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página contém uma tag canônica que aponta para si mesma
+            (auto-referência). Esta é a implementação correta para páginas que
+            são a versão principal/canônica do conteúdo.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar a tag canônica</li>
+            <li>Identificar que a URL canônica é a própria página</li>
+            <li>Considerar esta página como a versão principal do conteúdo</li>
+        </ul>
+
+        <h3>Propósito da tag canônica:</h3>
+        <p>A tag canônica é usada para:</p>
+        <ul>
+            <li>
+                Indicar a versão preferida de uma página quando existem
+                múltiplas URLs com conteúdo similar
+            </li>
+            <li>Evitar problemas de conteúdo duplicado</li>
+            <li>Consolidar sinais de SEO em uma única URL</li>
+        </ul>
+
+        <p>
+            Quando a tag canônica aponta para a própria página, isso indica que
+            esta é a versão principal do conteúdo.
+        </p>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="canonical-external.html"
+                    >Ir para página com canônica externa</a
+                >
+            </li>
+        </ul>
+    </body>
+</html>

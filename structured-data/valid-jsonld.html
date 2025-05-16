@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de JSON-LD Válido</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .jsonld-box {
+                background-color: #e6f7ff;
+                border: 1px solid #91d5ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            pre {
+                background-color: #f9f9f9;
+                padding: 10px;
+                border: 1px solid #d9d9d9;
+                border-radius: 3px;
+                overflow-x: auto;
+                white-space: pre-wrap;
+                font-size: 14px;
+            }
+            .success {
+                background-color: #f6ffed;
+                border: 1px solid #b7eb8f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+                color: #52c41a;
+            }
+        </style>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": "Teste de JSON-LD Válido",
+                "description": "Esta página contém dados estruturados JSON-LD válidos para testar a extração por crawlers.",
+                "image": "https://exemplo.com.br/images/article.jpg",
+                "author": {
+                    "@type": "Person",
+                    "name": "João Silva",
+                    "url": "https://exemplo.com.br/joao-silva"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Exemplo SEO",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://exemplo.com.br/images/logo.png",
+                        "width": "600",
+                        "height": "60"
+                    }
+                },
+                "datePublished": "2023-08-15T08:00:00+08:00",
+                "dateModified": "2023-08-16T09:20:00+08:00"
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Teste de JSON-LD Válido</h1>
+
+        <div class="jsonld-box">
+            <h2>Dados estruturados presentes nesta página:</h2>
+            <p>
+                Esta página contém um script JSON-LD válido com dados
+                estruturados do tipo Article.
+            </p>
+        </div>
+
+        <div class="success">
+            <strong>Sucesso:</strong> Os dados estruturados nesta página estão
+            em formato válido e devem ser corretamente interpretados pelos
+            motores de busca.
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página contém dados estruturados JSON-LD válidos que seguem o
+            schema.org. O objetivo é testar como o crawler extrai e interpreta
+            esses dados.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar o script JSON-LD</li>
+            <li>Extrair os dados estruturados</li>
+            <li>Identificar o tipo de entidade (Article)</li>
+            <li>Validar os dados contra o schema.org</li>
+        </ul>
+
+        <h3>Conteúdo do JSON-LD:</h3>
+        <pre>
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Teste de JSON-LD Válido",
+  "description": "Esta página contém dados estruturados JSON-LD válidos para testar a extração por crawlers.",
+  "image": "https://exemplo.com.br/images/article.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "João Silva",
+    "url": "https://exemplo.com.br/joao-silva"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Exemplo SEO",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://exemplo.com.br/images/logo.png",
+      "width": "600",
+      "height": "60"
+    }
+  },
+  "datePublished": "2023-08-15T08:00:00+08:00",
+  "dateModified": "2023-08-16T09:20:00+08:00"
+}
+    </pre
+        >
+
+        <h3>Benefícios dos dados estruturados:</h3>
+        <ul>
+            <li>Melhor compreensão do conteúdo pelos motores de busca</li>
+            <li>Possibilidade de rich snippets nos resultados de busca</li>
+            <li>Maior visibilidade e CTR (taxa de cliques)</li>
+            <li>Informações mais precisas para assistentes virtuais</li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="invalid-jsonld.html"
+                    >Ir para página com JSON-LD inválido</a
+                >
+            </li>
+        </ul>
+    </body>
+</html>

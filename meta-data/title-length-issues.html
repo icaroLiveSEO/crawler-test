@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Este é um título extremamente longo que excede significativamente o
+            limite recomendado de caracteres para títulos de páginas web, o que
+            pode causar truncamento nos resultados de busca e prejudicar a
+            experiência do usuário
+        </title>
+        <meta
+            property="og:title"
+            content="Este é um título extremamente longo que excede significativamente o limite recomendado de caracteres para títulos de páginas web, o que pode causar truncamento nos resultados de busca e prejudicar a experiência do usuário"
+        />
+        <meta
+            name="description"
+            content="Página para testar como crawlers lidam com títulos muito longos e muito curtos."
+        />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #333;
+            }
+
+            .content-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+
+            .code-block {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                margin: 15px 0;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            .warning {
+                background-color: #fff7e6;
+                border-left: 4px solid #fa8c16;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+
+            .success {
+                background-color: #f6ffed;
+                border-left: 4px solid #52c41a;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+
+            .error {
+                background-color: #fff1f0;
+                border-left: 4px solid #f5222d;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Problemas de Comprimento de Títulos</h1>
+
+        <div class="content-section">
+            <h2>Sobre Comprimento de Títulos</h2>
+            <p>
+                Esta página demonstra dois problemas comuns relacionados ao
+                comprimento de títulos:
+            </p>
+            <ul>
+                <li>
+                    Um título principal (tag title) extremamente longo que
+                    excede os limites recomendados
+                </li>
+                <li>
+                    Um título para Open Graph (og:title) extremamente curto e
+                    não descritivo
+                </li>
+            </ul>
+
+            <h3>Títulos Implementados Nesta Página:</h3>
+            <table>
+                <tr>
+                    <th>Tipo de Título</th>
+                    <th>Valor</th>
+                    <th>Problema</th>
+                </tr>
+                <tr>
+                    <td>Tag title</td>
+                    <td>
+                        "Este é um título extremamente longo que excede
+                        significativamente o limite recomendado de caracteres
+                        para títulos de páginas web, o que pode causar
+                        truncamento nos resultados de busca e prejudicar a
+                        experiência do usuário"
+                    </td>
+                    <td>Muito longo (180+ caracteres)</td>
+                </tr>
+                <tr>
+                    <td>OG title</td>
+                    <td>"T"</td>
+                    <td>Muito curto (1 caractere)</td>
+                </tr>
+                <tr>
+                    <td>H1</td>
+                    <td>"Problemas de Comprimento de Títulos"</td>
+                    <td>Comprimento adequado</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h2>Problemas com Títulos Muito Longos</h2>
+            <div class="error">
+                <strong>Problema:</strong> O título principal desta página tem
+                mais de 180 caracteres.
+            </div>
+            <p>Títulos muito longos apresentam vários problemas:</p>
+            <ul>
+                <li>
+                    São truncados nos resultados de busca (Google geralmente
+                    exibe apenas 50-60 caracteres)
+                </li>
+                <li>Podem ser truncados nas abas do navegador</li>
+                <li>Diluem as palavras-chave importantes</li>
+                <li>Dificultam a compreensão rápida do conteúdo da página</li>
+            </ul>
+
+            <div class="success">
+                <strong>Recomendação:</strong> Manter títulos entre 50-60
+                caracteres para garantir visibilidade completa nos resultados de
+                busca.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Problemas com Títulos Muito Curtos</h2>
+            <div class="error">
+                <strong>Problema:</strong> O título Open Graph (og:title) desta
+                página tem apenas 1 caractere.
+            </div>
+            <p>Títulos muito curtos também são problemáticos:</p>
+            <ul>
+                <li>Não fornecem informações suficientes sobre o conteúdo</li>
+                <li>
+                    Perdem oportunidades de incluir palavras-chave relevantes
+                </li>
+                <li>
+                    Resultam em baixas taxas de clique em compartilhamentos
+                    sociais
+                </li>
+                <li>Podem ser interpretados como erro ou spam</li>
+            </ul>
+
+            <div class="success">
+                <strong>Recomendação:</strong> Títulos para redes sociais devem
+                ser informativos e ter entre 40-60 caracteres.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Código Implementado</h2>
+            <div class="code-block">
+                &lt;title&gt;Este é um título extremamente longo que excede
+                significativamente o limite recomendado de caracteres para
+                títulos de páginas web, o que pode causar truncamento nos
+                resultados de busca e prejudicar a experiência do
+                usuário&lt;/title&gt; &lt;meta property="og:title" content="T"
+                /&gt;
+            </div>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com títulos de comprimento
+            inadequado.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Identificar que o título principal é excessivamente longo</li>
+            <li>Detectar que o título Open Graph é excessivamente curto</li>
+            <li>Sugerir comprimentos adequados para os títulos</li>
+            <li>
+                Reconhecer o impacto negativo desses problemas no SEO e na
+                experiência do usuário
+            </li>
+        </ul>
+
+        <h3>Links para outros testes:</h3>
+        <ul>
+            <li>
+                <a href="/meta-data/duplicate-titles.html"
+                    >Teste de Títulos Duplicados</a
+                >
+            </li>
+            <li>
+                <a href="/meta-data/title-length-issues-2.html"
+                    >Teste de Comprimento de Títulos (Inverso)</a
+                >
+            </li>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

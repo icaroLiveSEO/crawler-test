@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Links via JavaScript</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .link-section {
+                background-color: #f6ffed;
+                border: 1px solid #b7eb8f;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .js-section {
+                background-color: #fff7e6;
+                border: 1px solid #ffd591;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            #js-links-container {
+                margin-top: 15px;
+                padding: 10px;
+                border: 1px dashed #d9d9d9;
+                border-radius: 4px;
+            }
+            .warning {
+                background-color: #fffbe6;
+                border: 1px solid #ffe58f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+            .code {
+                font-family: monospace;
+                background-color: #f1f1f1;
+                padding: 10px;
+                border-radius: 3px;
+                overflow-x: auto;
+                white-space: pre-wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Links via JavaScript</h1>
+
+        <div class="warning">
+            <strong>Atenção:</strong> Esta página contém links que são injetados
+            dinamicamente via JavaScript. Crawlers que não executam JavaScript
+            não conseguirão detectar esses links.
+        </div>
+
+        <div class="link-section">
+            <h2>Links Estáticos (HTML)</h2>
+            <p>
+                Estes links estão presentes no HTML inicial e devem ser
+                detectados por qualquer crawler:
+            </p>
+            <ul>
+                <li><a href="/index.html">Link para página inicial</a></li>
+                <li>
+                    <a href="link-types.html"
+                        >Link para página de tipos de links</a
+                    >
+                </li>
+                <li>
+                    <a href="https://www.example.com">Link externo estático</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="js-section">
+            <h2>Links Dinâmicos (JavaScript)</h2>
+            <p>
+                Estes links serão injetados via JavaScript após o carregamento
+                da página:
+            </p>
+            <div id="js-links-container">
+                <p>
+                    Se você está vendo esta mensagem sem links abaixo, o
+                    JavaScript não foi executado ou está desabilitado.
+                </p>
+            </div>
+        </div>
+
+        <h2>Código JavaScript</h2>
+        <p>
+            O seguinte código JavaScript é usado para injetar os links
+            dinâmicos:
+        </p>
+        <div class="code">
+            // Lista de links a serem injetados const dynamicLinks = [ { url:
+            'https://www.google.com', text: 'Link dinâmico para Google' }, {
+            url: 'https://www.wikipedia.org', text: 'Link dinâmico para
+            Wikipedia' }, { url: 'broken-links.html', text: 'Link dinâmico
+            interno' }, { url: 'https://exemplo.com.br/pagina-js', text: 'Outro
+            link dinâmico' } ]; // Função para injetar os links function
+            injectLinks() { const container =
+            document.getElementById('js-links-container'); // Limpa o conteúdo
+            existente container.innerHTML = ''; // Cria uma lista não ordenada
+            const ul = document.createElement('ul'); // Adiciona cada link à
+            lista dynamicLinks.forEach(link => { const li =
+            document.createElement('li'); const a = document.createElement('a');
+            a.href = link.url; a.textContent = link.text; li.appendChild(a);
+            ul.appendChild(li); }); // Adiciona a lista ao container
+            container.appendChild(ul); } // Executa a função quando a página
+            carregar window.onload = injectLinks;
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página demonstra a diferença entre links presentes no HTML
+            inicial e links injetados via JavaScript. O objetivo é testar como o
+            crawler lida com links que só estão disponíveis após a execução de
+            JavaScript.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar os links estáticos presentes no HTML inicial</li>
+            <li>
+                Se executar JavaScript: detectar também os links injetados
+                dinamicamente
+            </li>
+            <li>
+                Se não executar JavaScript: reportar apenas os links estáticos
+            </li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="link-types.html">Ir para página de tipos de links</a>
+            </li>
+        </ul>
+
+        <script>
+            // Lista de links a serem injetados
+            const dynamicLinks = [
+                {
+                    url: 'https://www.google.com',
+                    text: 'Link dinâmico para Google',
+                },
+                {
+                    url: 'https://www.wikipedia.org',
+                    text: 'Link dinâmico para Wikipedia',
+                },
+                { url: 'broken-links.html', text: 'Link dinâmico interno' },
+                {
+                    url: 'https://exemplo.com.br/pagina-js',
+                    text: 'Outro link dinâmico',
+                },
+            ];
+
+            // Função para injetar os links
+            function injectLinks() {
+                const container = document.getElementById('js-links-container');
+
+                // Limpa o conteúdo existente
+                container.innerHTML = '';
+
+                // Cria uma lista não ordenada
+                const ul = document.createElement('ul');
+
+                // Adiciona cada link à lista
+                dynamicLinks.forEach((link) => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = link.url;
+                    a.textContent = link.text;
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                });
+
+                // Adiciona a lista ao container
+                container.appendChild(ul);
+            }
+
+            // Executa a função quando a página carregar
+            window.onload = injectLinks;
+        </script>
+    </body>
+</html>

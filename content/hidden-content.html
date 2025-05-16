@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Conteúdo Oculto</title>
+        <meta
+            name="description"
+            content="Página para testar como crawlers lidam com diferentes tipos de conteúdo oculto."
+        />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                color: #333;
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: #2c3e50;
+            }
+
+            .content-section {
+                background-color: #f8f9fa;
+                border: 1px solid #e9ecef;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+
+            .example-container {
+                margin: 20px 0;
+                padding: 15px;
+                background-color: #f5f5f5;
+                border-radius: 5px;
+            }
+
+            .display-none {
+                display: none;
+            }
+
+            .visibility-hidden {
+                visibility: hidden;
+            }
+
+            .height-zero {
+                height: 0;
+                overflow: hidden;
+            }
+
+            .text-hidden {
+                color: transparent;
+            }
+
+            .offscreen {
+                position: absolute;
+                left: -9999px;
+            }
+
+            .collapsed {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .toggle-button {
+                background-color: #4caf50;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                margin: 10px 0;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+
+            .footer {
+                margin-top: 30px;
+                padding-top: 15px;
+                border-top: 1px solid #eee;
+            }
+
+            .code-example {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                font-family: monospace;
+                overflow-x: auto;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Conteúdo Oculto</h1>
+
+        <div class="content-section">
+            <h2>Sobre o Conteúdo Oculto</h2>
+            <p>
+                Conteúdo oculto refere-se a texto ou elementos que estão
+                presentes no código HTML da página, mas não são visíveis para os
+                usuários durante a navegação normal. Os motores de busca podem
+                tratar o conteúdo oculto de diferentes maneiras, dependendo da
+                técnica utilizada e da intenção percebida.
+            </p>
+            <p>
+                Esta página demonstra várias técnicas de ocultação de conteúdo e
+                como elas podem ser percebidas por crawlers e motores de busca.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Exemplos de Conteúdo Oculto</h2>
+
+            <div class="example-container">
+                <h3>1. Display: None</h3>
+                <p>Este texto é visível normalmente.</p>
+                <p class="display-none">
+                    Este texto está oculto com display: none. Crawlers
+                    geralmente podem ver este texto, mas ele pode ser
+                    considerado manipulação se usado para keyword stuffing.
+                </p>
+                <div class="code-example">.display-none { display: none; }</div>
+            </div>
+
+            <div class="example-container">
+                <h3>2. Visibility: Hidden</h3>
+                <p>Este texto é visível normalmente.</p>
+                <p class="visibility-hidden">
+                    Este texto está oculto com visibility: hidden. O espaço
+                    ainda é reservado na página, mas o conteúdo é invisível.
+                </p>
+                <div class="code-example">
+                    .visibility-hidden { visibility: hidden; }
+                </div>
+            </div>
+
+            <div class="example-container">
+                <h3>3. Height: 0 e Overflow: Hidden</h3>
+                <p>Este texto é visível normalmente.</p>
+                <div class="height-zero">
+                    <p>
+                        Este texto está oculto com height: 0 e overflow: hidden.
+                    </p>
+                </div>
+                <div class="code-example">
+                    .height-zero { height: 0; overflow: hidden; }
+                </div>
+            </div>
+
+            <div class="example-container">
+                <h3>4. Texto com Cor Transparente</h3>
+                <p>Este texto é visível normalmente.</p>
+                <p class="text-hidden">
+                    Este texto tem cor transparente, tornando-o invisível contra
+                    o fundo.
+                </p>
+                <div class="code-example">
+                    .text-hidden { color: transparent; }
+                </div>
+            </div>
+
+            <div class="example-container">
+                <h3>5. Posicionamento Fora da Tela</h3>
+                <p>Este texto é visível normalmente.</p>
+                <p class="offscreen">
+                    Este texto está posicionado fora da tela com position:
+                    absolute e left: -9999px.
+                </p>
+                <div class="code-example">
+                    .offscreen { position: absolute; left: -9999px; }
+                </div>
+            </div>
+
+            <div class="example-container">
+                <h3>6. Conteúdo Colapsado (Legítimo)</h3>
+                <p>
+                    Este é um exemplo de conteúdo colapsado que pode ser
+                    expandido pelo usuário (uso legítimo):
+                </p>
+                <button class="toggle-button" onclick="toggleContent()">
+                    Mostrar/Ocultar Conteúdo
+                </button>
+                <div id="collapsible-content" class="collapsed">
+                    <p>
+                        Este conteúdo está inicialmente oculto, mas pode ser
+                        revelado pelo usuário através de interação.
+                    </p>
+                    <p>
+                        Esta é uma prática legítima para melhorar a experiência
+                        do usuário, desde que o conteúdo seja relevante.
+                    </p>
+                </div>
+                <div class="code-example">
+                    .collapsed { max-height: 0; overflow: hidden; }
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Implicações para SEO</h2>
+            <p>
+                O uso de conteúdo oculto pode ter diferentes implicações para
+                SEO:
+            </p>
+            <ul>
+                <li>
+                    <strong>Uso legítimo:</strong> Acordeões, abas e conteúdo
+                    colapsável para melhorar a experiência do usuário
+                </li>
+                <li>
+                    <strong>Uso problemático:</strong> Ocultar texto com
+                    palavras-chave que não está relacionado ao conteúdo visível
+                </li>
+                <li>
+                    <strong>Penalidades potenciais:</strong> Técnicas de
+                    ocultação usadas para manipular rankings podem resultar em
+                    penalidades
+                </li>
+            </ul>
+            <p>
+                Os motores de busca modernos são capazes de distinguir entre
+                usos legítimos e manipulativos de conteúdo oculto, considerando
+                o contexto e a intenção percebida.
+            </p>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler identifica e avalia diferentes
+            tipos de conteúdo oculto.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar os diferentes métodos de ocultação de conteúdo</li>
+            <li>
+                Distinguir entre usos legítimos e potencialmente problemáticos
+            </li>
+            <li>Avaliar o conteúdo oculto no contexto da página inteira</li>
+            <li>
+                Fornecer recomendações sobre o uso apropriado de conteúdo oculto
+            </li>
+        </ul>
+
+        <div class="footer">
+            <h3>Links para outros testes:</h3>
+            <ul>
+                <li>
+                    <a href="thin-content.html">Teste de Conteúdo Escasso</a>
+                </li>
+                <li>
+                    <a href="nested-content.html">Teste de Conteúdo Aninhado</a>
+                </li>
+                <li>
+                    <a href="../index.html">Voltar para a página inicial</a>
+                </li>
+            </ul>
+        </div>
+
+        <script>
+            function toggleContent() {
+                var content = document.getElementById('collapsible-content');
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            }
+        </script>
+    </body>
+</html>

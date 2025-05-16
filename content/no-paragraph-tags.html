@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conteúdo Sem Tags de Parágrafo</title>
+        <meta
+            name="description"
+            content="Página para testar como crawlers lidam com texto sem estruturação adequada em tags de parágrafo."
+        />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #333;
+            }
+
+            h1 {
+                color: #2c3e50;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 10px;
+            }
+
+            .footer {
+                margin-top: 40px;
+                border-top: 1px solid #eee;
+                padding-top: 20px;
+            }
+
+            .footer a {
+                color: #3498db;
+                text-decoration: none;
+            }
+
+            .footer a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Conteúdo Sem Tags de Parágrafo</h1>
+
+        Este é um exemplo de página com texto diretamente inserido no elemento
+        body, sem o uso adequado de tags de parágrafo &lt;p&gt;. Esta prática é
+        problemática para SEO e acessibilidade por diversos motivos. Quando o
+        texto é colocado diretamente no body sem estruturação adequada, os
+        motores de busca têm mais dificuldade para entender a organização do
+        conteúdo. A falta de tags semânticas como &lt;p&gt; prejudica a análise
+        do conteúdo. Além disso, a ausência de tags de parágrafo dificulta a
+        leitura por tecnologias assistivas, como leitores de tela, que dependem
+        da estrutura HTML para navegar pelo conteúdo de forma eficiente. A
+        legibilidade também é comprometida, pois os navegadores não aplicam o
+        espaçamento adequado entre blocos de texto quando não há tags de
+        parágrafo. Este texto longo sem quebras adequadas se torna uma "parede
+        de texto" difícil de ler e compreender. Os usuários tendem a abandonar
+        páginas com conteúdo mal estruturado. Boas práticas de SEO recomendam: -
+        Usar tags &lt;p&gt; para delimitar parágrafos - Estruturar o conteúdo
+        com cabeçalhos (h1-h6) adequados - Usar listas ordenadas e não ordenadas
+        quando apropriado - Aplicar formatação semântica como &lt;strong&gt; e
+        &lt;em&gt; em vez de formatação puramente visual Crawlers modernos
+        conseguem extrair o texto mesmo sem as tags de parágrafo, mas a ausência
+        delas é considerada um sinal de baixa qualidade técnica da página, o que
+        pode impactar negativamente o ranqueamento.
+
+        <div class="footer">
+            <h3>Links para outros testes:</h3>
+            <ul>
+                <li><a href="dense-text.html">Teste de Texto Denso</a></li>
+                <li>
+                    <a href="nested-content.html">Teste de Conteúdo Aninhado</a>
+                </li>
+                <li>
+                    <a href="../index.html">Voltar para a página inicial</a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

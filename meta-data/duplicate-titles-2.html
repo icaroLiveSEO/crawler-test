@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Títulos Duplicados - Teste SEO</title>
+        <meta name="title" content="Títulos Duplicados - Teste SEO" />
+        <meta property="og:title" content="Títulos Duplicados - Teste SEO" />
+        <meta name="twitter:title" content="Títulos Duplicados - Teste SEO" />
+        <meta
+            name="description"
+            content="Segunda página com título idêntico para testar como crawlers lidam com títulos duplicados entre páginas."
+        />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #333;
+            }
+
+            .content-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+
+            .code-block {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                margin: 15px 0;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            .warning {
+                background-color: #fff7e6;
+                border-left: 4px solid #fa8c16;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+
+            .error {
+                background-color: #fff1f0;
+                border-left: 4px solid #f5222d;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Títulos Duplicados (Página 2)</h1>
+
+        <div class="content-section">
+            <h2>Sobre Títulos Duplicados Entre Páginas</h2>
+            <p>
+                Esta página tem exatamente o mesmo título que a página
+                "duplicate-titles.html", demonstrando o problema de duplicação
+                de títulos entre páginas diferentes do mesmo site.
+            </p>
+
+            <div class="error">
+                <strong>Problema:</strong> O título desta página é idêntico ao
+                de outra página do site, o que pode confundir tanto usuários
+                quanto motores de busca.
+            </div>
+
+            <p>
+                Observe que embora o conteúdo da página seja diferente, os
+                motores de busca podem ter dificuldade em determinar qual página
+                é mais relevante para uma determinada consulta quando ambas têm
+                o mesmo título.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Comparação dos Títulos</h2>
+
+            <table>
+                <tr>
+                    <th>Página</th>
+                    <th>Título</th>
+                    <th>H1</th>
+                </tr>
+                <tr>
+                    <td>duplicate-titles.html</td>
+                    <td>"Títulos Duplicados - Teste SEO"</td>
+                    <td>"Títulos Duplicados"</td>
+                </tr>
+                <tr>
+                    <td>duplicate-titles-2.html (esta página)</td>
+                    <td>"Títulos Duplicados - Teste SEO"</td>
+                    <td>"Títulos Duplicados (Página 2)"</td>
+                </tr>
+            </table>
+
+            <p>
+                Note que embora os títulos HTML (tag title) sejam idênticos, os
+                cabeçalhos H1 são diferentes. Isso ainda é problemático, pois os
+                motores de busca dão mais peso ao título HTML do que ao H1 ao
+                determinar o tema da página.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Problemas Causados por Títulos Duplicados Entre Páginas</h2>
+            <ul>
+                <li>
+                    <strong>Canibalização de palavras-chave:</strong> Páginas do
+                    mesmo site competem entre si nos resultados de busca
+                </li>
+                <li>
+                    <strong>Confusão para usuários:</strong> Dificuldade em
+                    distinguir entre páginas nos resultados de busca
+                </li>
+                <li>
+                    <strong>Diluição de relevância:</strong> Os motores de busca
+                    podem dividir a "autoridade" entre as páginas duplicadas
+                </li>
+                <li>
+                    <strong>Indexação ineficiente:</strong> Os motores de busca
+                    podem optar por não indexar todas as páginas com títulos
+                    idênticos
+                </li>
+                <li>
+                    <strong>Experiência de usuário prejudicada:</strong>
+                    Dificuldade em identificar páginas em favoritos ou histórico
+                </li>
+            </ul>
+
+            <div class="warning">
+                <strong>Impacto no SEO:</strong> Títulos duplicados entre
+                páginas diferentes podem reduzir significativamente o desempenho
+                geral do site nos resultados de busca.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Código Implementado</h2>
+            <div class="code-block">
+                &lt;title&gt;Títulos Duplicados - Teste SEO&lt;/title&gt;
+                &lt;meta name="title" content="Títulos Duplicados - Teste SEO"
+                /&gt; &lt;meta property="og:title" content="Títulos Duplicados -
+                Teste SEO" /&gt; &lt;meta name="twitter:title" content="Títulos
+                Duplicados - Teste SEO" /&gt;
+            </div>
+            <p>
+                Este código é idêntico ao da página "duplicate-titles.html",
+                criando o problema de duplicação.
+            </p>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com títulos duplicados entre
+            diferentes páginas do mesmo site.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>
+                Identificar que esta página tem o mesmo título que outra página
+                do site
+            </li>
+            <li>Alertar sobre o problema de canibalização de palavras-chave</li>
+            <li>Sugerir títulos únicos para cada página</li>
+            <li>Explicar o impacto negativo de títulos duplicados no SEO</li>
+        </ul>
+
+        <h3>Links para outros testes:</h3>
+        <ul>
+            <li>
+                <a href="duplicate-titles.html"
+                    >Página Original com Mesmo Título</a
+                >
+            </li>
+            <li>
+                <a href="title-length-issues.html"
+                    >Teste de Comprimento de Títulos</a
+                >
+            </li>
+            <li>
+                <a href="title-length-issues-2.html"
+                    >Teste de Comprimento de Títulos (Inverso)</a
+                >
+            </li>
+            <li><a href="../index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

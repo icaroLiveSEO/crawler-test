@@ -1,0 +1,64 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Página sem Descrições</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .warning-box {
+                background-color: #fff3cd;
+                border: 1px solid #ffeeba;
+                color: #856404;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Página sem Descrições</h1>
+
+        <div class="warning-box">
+            <h2>Atenção: Esta página não possui nenhum tipo de descrição</h2>
+            <p>
+                Esta página foi criada propositalmente sem nenhuma meta
+                description, og:description ou twitter:description.
+            </p>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página não contém nenhum tipo de descrição meta. O objetivo é
+            testar como o crawler lida com a ausência de descrições.
+        </p>
+
+        <h3>O que o crawler deve encontrar:</h3>
+        <ul>
+            <li>Ausência de meta description padrão</li>
+            <li>Ausência de og:description</li>
+            <li>Ausência de twitter:description</li>
+        </ul>
+
+        <p>
+            Quando uma página não possui descrição, os motores de busca
+            geralmente extraem um trecho do conteúdo da página para exibir nos
+            resultados de busca.
+        </p>
+
+        <p>Um bom crawler deve:</p>
+        <ul>
+            <li>Detectar a ausência de descrições</li>
+            <li>
+                Possivelmente gerar uma descrição automática baseada no conteúdo
+                da página
+            </li>
+            <li>Reportar a ausência de descrição como um problema de SEO</li>
+        </ul>
+    </body>
+</html>

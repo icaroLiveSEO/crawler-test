@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Paginação - Página 1</title>
+        <link rel="next" href="pagination-page2.html" />
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .pagination-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .content-block {
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                padding: 15px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+            .pagination {
+                display: flex;
+                justify-content: center;
+                margin: 20px 0;
+            }
+            .pagination a,
+            .pagination span {
+                color: #1890ff;
+                padding: 8px 16px;
+                text-decoration: none;
+                border: 1px solid #d9d9d9;
+                margin: 0 4px;
+                border-radius: 2px;
+            }
+            .pagination .active {
+                background-color: #1890ff;
+                color: white;
+                border: 1px solid #1890ff;
+            }
+            .pagination a:hover:not(.active) {
+                background-color: #f0f5ff;
+            }
+            .code-block {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                margin: 15px 0;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Paginação - Página 1</h1>
+
+        <div class="pagination-section">
+            <h2>Sobre a Paginação</h2>
+            <p>
+                A paginação é uma técnica usada para dividir conteúdo em várias
+                páginas, facilitando a navegação e melhorando a experiência do
+                usuário. Para SEO, é importante implementar corretamente os
+                links de paginação.
+            </p>
+
+            <h3>Implementação Correta</h3>
+            <p>
+                Esta página implementa links de paginação usando os atributos
+                <code>rel="next"</code> e <code>rel="prev"</code> no cabeçalho
+                HTML, além de links de navegação visíveis.
+            </p>
+
+            <div class="code-block">
+                &lt;link rel="next" href="pagination-page2.html" /&gt;
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h2>Conteúdo da Página 1</h2>
+            <p>
+                Este é o conteúdo da primeira página de uma série de páginas
+                paginadas. Em um site real, isso poderia ser uma lista de
+                produtos, artigos de blog, resultados de pesquisa, etc.
+            </p>
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Item</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Item 1</td>
+                    <td>Descrição do item 1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Item 2</td>
+                    <td>Descrição do item 2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Item 3</td>
+                    <td>Descrição do item 3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Item 4</td>
+                    <td>Descrição do item 4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Item 5</td>
+                    <td>Descrição do item 5</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <span class="active">1</span>
+            <a href="pagination-page2.html">2</a>
+            <a href="pagination-page3.html">3</a>
+            <a href="pagination-page4.html">4</a>
+            <a href="pagination-page5.html">5</a>
+            <a href="pagination-page2.html">Próxima &raquo;</a>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com conteúdo paginado e se ele
+            reconhece corretamente os links de paginação.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar que esta é a primeira página de uma série paginada</li>
+            <li>
+                Identificar o link para a próxima página através do atributo
+                <code>rel="next"</code>
+            </li>
+            <li>Seguir os links de paginação para indexar todo o conteúdo</li>
+            <li>Entender a relação entre as páginas da sequência</li>
+        </ul>
+
+        <h3>Links para outros testes:</h3>
+        <ul>
+            <li>
+                <a href="/resource/resource-loading.html"
+                    >Teste de Carregamento de Recursos</a
+                >
+            </li>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

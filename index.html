@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SEO Test Site - Crawler Testing Ground</title>
+        <meta name="title" content="SEO Test Site - Meta Title" />
+        <meta property="og:title" content="SEO Test Site - Open Graph Title" />
+        <meta
+            name="twitter:title"
+            content="SEO Test Site - Twitter Card Title"
+        />
+        <meta
+            name="description"
+            content="Site para testar crawlers e análise de SEO"
+        />
+        <meta property="og:description" content="Descrição para Open Graph" />
+        <meta
+            name="twitter:description"
+            content="Descrição para Twitter Card"
+        />
+
+        <script
+            crossorigin
+            src="https://unpkg.com/react@18/umd/react.production.min.js"
+        ></script>
+        <script
+            crossorigin
+            src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+        ></script>
+        <script src="https://unpkg.com/@babel/standalone@7.22.5/babel.min.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .site-map {
+                margin-top: 30px;
+            }
+            .site-map h2 {
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
+            }
+            .page-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+            }
+            .page-card {
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 15px;
+                background-color: #f9f9f9;
+            }
+            .page-card h3 {
+                margin-top: 0;
+            }
+            .page-card p {
+                color: #666;
+            }
+            .page-card .issues {
+                color: #d32f2f;
+                font-size: 0.9em;
+            }
+            .search-box {
+                margin: 20px 0;
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+            .category-title {
+                margin-top: 30px;
+                font-size: 1.5em;
+                color: #333;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            const App = () => {
+                const [searchTerm, setSearchTerm] = React.useState('');
+                const [pages, setPages] = React.useState([
+                    // Problemas de Estrutura HTML
+                    {
+                        title: 'Página sem Estrutura Semântica',
+                        path: 'structured/no-semantic.html',
+                        description: 'Página sem uso de tags semânticas HTML5',
+                        category: 'estrutura',
+                        issues: [
+                            'Ausência de tags semânticas',
+                            'Estrutura HTML pobre',
+                            'Difícil para leitores de tela',
+                        ],
+                    },
+                    {
+                        title: 'Múltiplos H1',
+                        path: 'structured/multiple-h1.html',
+                        description: 'Página com múltiplas tags H1',
+                        category: 'estrutura',
+                        issues: [
+                            'Múltiplas tags H1',
+                            'Hierarquia de cabeçalhos incorreta',
+                        ],
+                    },
+                    {
+                        title: 'Sem Main Content',
+                        path: 'structured/no-main.html',
+                        description: 'Página sem tag main ou article',
+                        category: 'estrutura',
+                        issues: [
+                            'Ausência de tag main',
+                            'Difícil identificar conteúdo principal',
+                        ],
+                    },
+
+                    {
+                        title: 'Estruturas HTML Semânticas',
+                        path: 'structured/semantic-structures.html',
+                        description:
+                            'Página com diferentes estruturas HTML e uso variado de tags semânticas',
+                        category: 'estrutura',
+                        issues: [
+                            'Uso correto de tags semânticas',
+                            'Estrutura HTML bem organizada',
+                            'Acessibilidade melhorada',
+                        ],
+                    },
+                    {
+                        title: 'Conteúdo Rico em Texto',
+                        path: 'structured/rich-text-content.html',
+                        description:
+                            'Página com conteúdo rico em texto e diferentes tags de formatação',
+                        category: 'estrutura',
+                        issues: [
+                            'Uso adequado de cabeçalhos h1-h6',
+                            'Elementos de texto variados',
+                            'Estrutura de conteúdo bem organizada',
+                        ],
+                    },
+
+                    // Problemas de Conteúdo
+                    {
+                        title: 'Texto Denso',
+                        path: 'content/dense-text.html',
+                        description:
+                            'Página com texto denso e pouca estruturação',
+                        category: 'conteudo',
+                        issues: [
+                            'Texto sem quebras adequadas',
+                            'Falta de hierarquia visual',
+                        ],
+                    },
+                    {
+                        title: 'Contagem de Palavras',
+                        path: 'content/word-count-test.html',
+                        description:
+                            'Página para testar contagem de palavras visíveis vs. HTML total',
+                        category: 'conteudo',
+                        issues: [
+                            'Texto em elementos escondidos',
+                            'Texto em scripts e comentários',
+                            'Texto em elementos interativos',
+                        ],
+                    },
+                    {
+                        title: 'Conteúdo Aninhado',
+                        path: 'content/nested-content.html',
+                        description:
+                            'Página com conteúdo principal profundamente aninhado em múltiplas divs',
+                        category: 'conteudo',
+                        issues: [
+                            'Conteúdo em múltiplos níveis de aninhamento',
+                            'Dificuldade de análise por crawlers',
+                        ],
+                    },
+                    {
+                        title: 'Conteúdo Sem Tags de Parágrafo',
+                        path: 'content/no-paragraph-tags.html',
+                        description:
+                            'Página com texto diretamente no body sem tags de parágrafo',
+                        category: 'conteudo',
+                        issues: [
+                            'Ausência de tags <p> para estruturar o texto',
+                            'Texto em "parede" sem quebras adequadas',
+                            'Problemas de acessibilidade e legibilidade',
+                        ],
+                    },
+                    {
+                        title: 'Conteúdo Escasso',
+                        path: 'content/thin-content.html',
+
+                        description:
+                            'Página para testar como crawlers lidam com conteúdo escasso ou insuficiente',
+                        category: 'conteudo',
+                        issues: [
+                            'Conteúdo com pouco valor',
+                            'Páginas com texto insuficiente',
+                            'Identificação de conteúdo de baixa qualidade',
+                        ],
+                    },
+                    {
+                        title: 'Conteúdo Oculto',
+                        path: 'content/hidden-content.html',
+                        description:
+                            'Página para testar como crawlers lidam com diferentes tipos de conteúdo oculto',
+                        category: 'conteudo',
+                        issues: [
+                            'Texto oculto com CSS',
+                            'Conteúdo não visível para usuários',
+                            'Distinção entre usos legítimos e problemáticos',
+                        ],
+                    },
+
+                    // Problemas de Duplicação
+                    {
+                        title: 'Conteúdo Duplicado 1',
+                        path: 'duplicated-content/duplicate-content-1.html',
+                        description:
+                            'Primeira versão de página com conteúdo duplicado',
+                        category: 'duplicacao',
+                        issues: [
+                            'Conteúdo idêntico em estrutura diferente',
+                            'Teste para hash de conteúdo',
+                        ],
+                    },
+                    {
+                        title: 'Conteúdo Duplicado 2',
+                        path: 'duplicated-content/duplicate-content-2.html',
+                        description:
+                            'Segunda versão de página com conteúdo duplicado',
+                        category: 'duplicacao',
+                        issues: [
+                            'Conteúdo idêntico em estrutura diferente',
+                            'Teste para hash de conteúdo',
+                        ],
+                    },
+
+                    // Problemas de Metadados
+                    {
+                        title: 'Sem Títulos',
+                        path: 'meta-data/no-titles.html',
+                        description: 'Página sem nenhum tipo de título',
+                        category: 'metadados',
+                        issues: [
+                            'Ausência de tag title',
+                            'Ausência de meta titles',
+                            'Ausência de h1',
+                        ],
+                    },
+                    {
+                        title: 'Todos os Títulos',
+                        path: 'meta-data/all-titles.html',
+                        description:
+                            'Página com todos os tipos de título diferentes',
+                        category: 'metadados',
+                        issues: [
+                            'Múltiplos tipos de título',
+                            'Títulos com conteúdo diferente',
+                            'Teste de priorização de títulos',
+                        ],
+                    },
+                    {
+                        title: 'Títulos Duplicados',
+                        path: 'meta-data/duplicate-titles.html',
+                        description:
+                            'Página com o mesmo título em diferentes meta tags',
+                        category: 'metadados',
+                        issues: [
+                            'Títulos idênticos em diferentes meta tags',
+                            'Oportunidade perdida de otimização',
+                        ],
+                    },
+                    {
+                        title: 'Títulos Duplicados (Página 2)',
+                        path: 'meta-data/duplicate-titles-2.html',
+                        description:
+                            'Segunda página com título idêntico à primeira página de títulos duplicados',
+                        category: 'metadados',
+                        issues: [
+                            'Títulos idênticos em páginas diferentes',
+                            'Canibalização de palavras-chave',
+                            'Confusão para usuários e motores de busca',
+                        ],
+                    },
+                    {
+                        title: 'Problemas de Comprimento de Títulos',
+                        path: 'meta-data/title-length-issues.html',
+                        description:
+                            'Página com título muito longo e título muito curto',
+                        category: 'metadados',
+                        issues: [
+                            'Título principal excessivamente longo',
+                            'Título Open Graph excessivamente curto',
+                        ],
+                    },
+                    {
+                        title: 'Problemas de Comprimento de Títulos (Inverso)',
+                        path: 'meta-data/title-length-issues-2.html',
+                        description:
+                            'Página com título principal muito curto e título Open Graph muito longo',
+                        category: 'metadados',
+                        issues: [
+                            'Título principal excessivamente curto',
+                            'Título Open Graph excessivamente longo',
+                        ],
+                    },
+
+                    // Adicione esta nova categoria de páginas ao array de pages no script React
+                    {
+                        title: 'Meta Description',
+                        path: 'description/meta-description.html',
+                        description:
+                            'Página apenas com meta description padrão',
+                        category: 'descricoes',
+                        issues: [
+                            'Possui apenas meta description padrão',
+                            'Sem descrições para redes sociais',
+                        ],
+                    },
+                    {
+                        title: 'Open Graph Description',
+                        path: 'description/og-description.html',
+                        description: 'Página apenas com og:description',
+                        category: 'descricoes',
+                        issues: [
+                            'Possui apenas og:description',
+                            'Sem meta description padrão',
+                        ],
+                    },
+                    {
+                        title: 'Twitter Description',
+                        path: 'description/twitter-description.html',
+                        description: 'Página apenas com twitter:description',
+                        category: 'descricoes',
+                        issues: [
+                            'Possui apenas twitter:description',
+                            'Sem meta description padrão',
+                        ],
+                    },
+                    {
+                        title: 'Todas as Descrições',
+                        path: 'description/all-descriptions.html',
+                        description: 'Página com todos os tipos de descrição',
+                        category: 'descricoes',
+                        issues: [
+                            'Múltiplos tipos de descrição',
+                            'Conteúdo diferente em cada descrição',
+                        ],
+                    },
+                    {
+                        title: 'Sem Descrições',
+                        path: 'description/no-description.html',
+                        description: 'Página sem nenhum tipo de descrição',
+                        category: 'descricoes',
+                        issues: [
+                            'Ausência de qualquer tipo de descrição',
+                            'Potencial problema de SEO',
+                        ],
+                    },
+
+                    // Meta Robots
+                    {
+                        title: 'Index Follow',
+                        path: 'meta-robots/robots-index-follow.html',
+                        description: 'Página com meta robots index, follow',
+                        category: 'robots',
+                        issues: [
+                            'Configuração padrão de indexação',
+                            'Permite indexação e seguimento de links',
+                        ],
+                    },
+                    {
+                        title: 'NoIndex NoFollow',
+                        path: 'meta-robots/robots-noindex-nofollow.html',
+                        description: 'Página com meta robots noindex, nofollow',
+                        category: 'robots',
+                        issues: [
+                            'Bloqueia indexação e seguimento de links',
+                            'Deve ser ignorada pelos motores de busca',
+                        ],
+                    },
+                    {
+                        title: 'Diretivas Especiais',
+                        path: 'meta-robots/robots-special.html',
+                        description: 'Página com diretivas especiais de robots',
+                        category: 'robots',
+                        issues: [
+                            'Usa noarchive e noimageindex',
+                            'Permite indexação mas com restrições',
+                        ],
+                    },
+                    {
+                        title: 'Sem Meta Robots',
+                        path: 'meta-robots/no-robots.html',
+                        description: 'Página sem meta robots',
+                        category: 'robots',
+                        issues: [
+                            'Ausência de meta robots',
+                            'Comportamento padrão assumido',
+                        ],
+                    },
+                    {
+                        title: 'X-Robots-Tag',
+                        path: 'meta-robots/x-robots-tag.html',
+                        description: 'Página com X-Robots-Tag via HTTP header',
+                        category: 'robots',
+                        issues: [
+                            'Usa header HTTP em vez de meta tag',
+                            'Teste de cabeçalhos HTTP',
+                        ],
+                    },
+
+                    // Hreflang
+                    {
+                        title: 'Hreflang Tags',
+                        path: 'hreflang/hreflang-tags.html',
+                        description:
+                            'Página com tags hreflang para múltiplos idiomas',
+                        category: 'hreflang',
+                        issues: [
+                            'Múltiplas tags hreflang',
+                            'Referências a diferentes idiomas e regiões',
+                        ],
+                    },
+                    {
+                        title: 'Hreflang HTTP Header',
+                        path: 'hreflang/hreflang-header.html',
+                        description: 'Página com hreflang via HTTP header',
+                        category: 'hreflang',
+                        issues: [
+                            'Usa header HTTP Link com hreflang',
+                            'Teste de cabeçalhos HTTP',
+                        ],
+                    },
+
+                    // Adicione estas novas categorias ao array de pages no script React
+
+                    // Canônicas
+                    {
+                        title: 'Canônica Self',
+                        path: 'canonical/canonical-self.html',
+                        description:
+                            'Página com tag canônica apontando para si mesma',
+                        category: 'canonical',
+                        issues: ['Canônica auto-referencial', 'URL absoluta'],
+                    },
+                    {
+                        title: 'Canônica Externa',
+                        path: 'canonical/canonical-external.html',
+                        description:
+                            'Página com tag canônica apontando para outra página',
+                        category: 'canonical',
+                        issues: [
+                            'Canônica apontando para outra URL',
+                            'Indica conteúdo duplicado',
+                        ],
+                    },
+                    {
+                        title: 'Canônica Relativa',
+                        path: 'canonical/canonical-relative.html',
+                        description:
+                            'Página com tag canônica usando URL relativa',
+                        category: 'canonical',
+                        issues: [
+                            'Usa caminho relativo',
+                            'Teste de resolução de URLs',
+                        ],
+                    },
+                    {
+                        title: 'Sem Canônica',
+                        path: 'canonical/no-canonical.html',
+                        description: 'Página sem tag canônica',
+                        category: 'canonical',
+                        issues: [
+                            'Ausência de tag canônica',
+                            'Potencial problema para conteúdo duplicado',
+                        ],
+                    },
+
+                    // Dados Estruturados
+                    {
+                        title: 'JSON-LD Válido',
+                        path: 'structured-data/valid-jsonld.html',
+                        description:
+                            'Página com dados estruturados JSON-LD válidos',
+                        category: 'structured',
+                        issues: [
+                            'Contém schema.org válido',
+                            'Dados estruturados completos',
+                        ],
+                    },
+                    {
+                        title: 'JSON-LD Inválido',
+                        path: 'structured-data/invalid-jsonld.html',
+                        description:
+                            'Página com dados estruturados JSON-LD inválidos',
+                        category: 'structured',
+                        issues: [
+                            'Contém JSON-LD com erros',
+                            'Deve ser detectado como problemático',
+                        ],
+                    },
+                    {
+                        title: 'Sem Dados Estruturados',
+                        path: 'structured-data/no-structured-data.html',
+                        description: 'Página sem dados estruturados',
+                        category: 'structured',
+                        issues: [
+                            'Ausência de dados estruturados',
+                            'Oportunidade de melhoria de SEO',
+                        ],
+                    },
+
+                    // Adicione esta nova categoria ao array de pages no script React
+
+                    // Links
+                    {
+                        title: 'Tipos de Links',
+                        path: 'link/link-types.html',
+                        description:
+                            'Página com diferentes tipos de links para teste',
+                        category: 'links',
+                        issues: [
+                            'Links internos e externos',
+                            'Diferentes atributos rel',
+                        ],
+                    },
+                    {
+                        title: 'Links Quebrados',
+                        path: 'link/broken-links.html',
+                        description:
+                            'Página com links que apontam para recursos inexistentes',
+                        category: 'links',
+                        issues: ['Links 404', 'Recursos não encontrados'],
+                    },
+                    {
+                        title: 'Links Não-HTML',
+                        path: 'link/non-html-links.html',
+                        description: 'Página com links para arquivos não-HTML',
+                        category: 'links',
+                        issues: ['Links para PDF, DOCX', 'Protocolos não-HTTP'],
+                    },
+                    {
+                        title: 'Links JavaScript',
+                        path: 'link/js-links.html',
+                        description:
+                            'Página com links injetados via JavaScript',
+                        category: 'links',
+                        issues: [
+                            'Links não presentes no HTML inicial',
+                            'Requer execução de JavaScript',
+                        ],
+                    },
+                    {
+                        title: 'Base Tag',
+                        path: 'link/base-tag.html',
+                        description:
+                            'Página com tag base para resolução de URLs',
+                        category: 'links',
+                        issues: [
+                            'Usa tag base href',
+                            'Altera resolução de URLs relativas',
+                        ],
+                    },
+                    {
+                        title: 'Links em Iframe',
+                        path: 'link/iframe-links.html',
+                        description: 'Página com links dentro de iframes',
+                        category: 'links',
+                        issues: [
+                            'Links em contexto isolado',
+                            'Requer análise de iframes',
+                        ],
+                    },
+                    {
+                        title: 'Links com Target Blank',
+                        path: 'link/target-blank-links.html',
+                        description: 'Página com links que abrem em novas abas',
+                        category: 'links',
+                        issues: [
+                            'Links com target="_blank"',
+                            'Considerações de segurança com noopener',
+                        ],
+                    },
+                    {
+                        title: 'Links Válidos',
+                        path: 'link/valid-links.html',
+                        description:
+                            'Página com diferentes tipos de links válidos e navegação estruturada',
+                        category: 'links',
+                        issues: [
+                            'Links para diferentes níveis de navegação',
+                            'Links com atributos especiais',
+                            'Estrutura de navegação hierárquica',
+                        ],
+                    },
+
+                    // Adicione estas novas páginas ao array de pages no script React
+                    {
+                        title: 'Imagens Básicas',
+                        path: 'image/image-basics.html',
+                        description:
+                            'Página com imagens usando atributos src, alt e title',
+                        category: 'imagens',
+                        issues: [
+                            'Imagens sem texto alternativo',
+                            'Atributos de imagem',
+                        ],
+                    },
+                    {
+                        title: 'Formatos de Imagem',
+                        path: 'image/image-formats.html',
+                        description:
+                            'Página com imagens em diferentes formatos',
+                        category: 'imagens',
+                        issues: [
+                            'Formatos de imagem (JPG, PNG, GIF, SVG, WebP)',
+                            'Escolha de formato adequado',
+                        ],
+                    },
+                    {
+                        title: 'Imagens com Srcset',
+                        path: 'image/image-srcset.html',
+                        description:
+                            'Página com imagens responsivas usando srcset',
+                        category: 'imagens',
+                        issues: ['Imagens responsivas', 'Múltiplas resoluções'],
+                    },
+                    {
+                        title: 'Imagens com Data URI',
+                        path: 'image/image-data-uri.html',
+                        description:
+                            'Página com imagens incorporadas como data URI',
+                        category: 'imagens',
+                        issues: [
+                            'Imagens incorporadas no HTML',
+                            'Codificação Base64',
+                        ],
+                    },
+                    {
+                        title: 'Imagens com Erros',
+                        path: 'image/image-errors.html',
+                        description:
+                            'Página com imagens que não carregam corretamente',
+                        category: 'imagens',
+                        issues: [
+                            'URLs de imagem quebradas',
+                            'Erros de carregamento',
+                        ],
+                    },
+                    {
+                        title: 'Dimensões e Compressão de Imagens',
+                        path: 'image/image-dimensions.html',
+                        description:
+                            'Página com imagens de diferentes dimensões e níveis de compressão',
+                        category: 'imagens',
+                        issues: [
+                            'Imagens sobredimensionadas',
+                            'Oportunidades de compressão',
+                        ],
+                    },
+
+                    // Adicione estas novas páginas ao array de pages no script React
+                    {
+                        title: 'Iframes Básicos',
+                        path: 'iframe/iframe-basics.html',
+                        description:
+                            'Página com iframes usando URLs válidas e inválidas',
+                        category: 'iframes',
+                        issues: [
+                            'Iframes com URLs quebradas',
+                            'Detecção de iframes',
+                        ],
+                    },
+                    {
+                        title: 'Iframes com Data URI',
+                        path: 'iframe/iframe-data-uri.html',
+                        description: 'Página com iframes usando Data URI',
+                        category: 'iframes',
+                        issues: [
+                            'Iframes com conteúdo incorporado',
+                            'Data URI em iframes',
+                        ],
+                    },
+
+                    {
+                        title: 'Paginação - Página 1',
+                        path: 'pagination/pagination-page1.html',
+                        description:
+                            'Primeira página de uma sequência paginada',
+                        category: 'paginacao',
+                        issues: [
+                            'Implementação de rel="next"',
+                            'Primeira página de sequência paginada',
+                        ],
+                    },
+                    {
+                        title: 'Paginação - Página 2',
+                        path: 'pagination/pagination-page2.html',
+                        description:
+                            'Página intermediária de uma sequência paginada',
+                        category: 'paginacao',
+                        issues: [
+                            'Implementação de rel="prev" e rel="next"',
+                            'Página intermediária de sequência paginada',
+                        ],
+                    },
+                    {
+                        title: 'Paginação - Página 5',
+                        path: 'pagination/pagination-page5.html',
+                        description: 'Última página de uma sequência paginada',
+                        category: 'paginacao',
+                        issues: [
+                            'Implementação de rel="prev"',
+                            'Última página de sequência paginada',
+                        ],
+                    },
+                    {
+                        title: 'Carregamento de Recursos',
+                        path: 'resource/resource-loading.html',
+                        description:
+                            'Página com diferentes tipos de recursos e comportamentos de carregamento',
+                        category: 'recursos',
+                        issues: [
+                            'Recursos com URLs inválidas',
+                            'Recursos com carregamento lento',
+                            'Impacto no desempenho da página',
+                        ],
+                    },
+                    {
+                        title: 'Página de Carregamento Lento',
+                        path: 'resource/slow-loading-page.html',
+                        description:
+                            'Página que demora mais de 4 segundos para carregar completamente',
+                        category: 'recursos',
+                        issues: [
+                            'Tempo de carregamento excessivo',
+                            'JavaScript bloqueante',
+                            'Carregamento progressivo de conteúdo',
+                            'Simulação de processamento pesado',
+                        ],
+                    },
+                    {
+                        title: 'Conteúdo Pesado em JavaScript',
+                        path: 'resource/js-heavy-content.html',
+                        description:
+                            'Página cujo conteúdo principal e links são renderizados apenas via JavaScript',
+                        category: 'recursos',
+                        issues: [
+                            'Conteúdo dependente de JavaScript',
+                            'Links renderizados dinamicamente',
+                            'Problemas de indexação para crawlers',
+                            'Desafios de SEO para SPAs',
+                        ],
+                    },
+                ]);
+
+                // Função para remover acentos e normalizar texto
+                const normalizeText = (text) => {
+                    return text
+                        .toLowerCase()
+                        .normalize('NFD')
+                        .replace(/[\u0300-\u036f]/g, '');
+                };
+
+                const filteredPages = pages.filter(
+                    (page) =>
+                        normalizeText(page.title).includes(
+                            normalizeText(searchTerm)
+                        ) ||
+                        normalizeText(page.description).includes(
+                            normalizeText(searchTerm)
+                        ) ||
+                        page.issues.some((issue) =>
+                            normalizeText(issue).includes(
+                                normalizeText(searchTerm)
+                            )
+                        )
+                );
+
+                // Agrupar páginas por categoria
+                const groupedPages = filteredPages.reduce((acc, page) => {
+                    if (!acc[page.category]) {
+                        acc[page.category] = [];
+                    }
+                    acc[page.category].push(page);
+                    return acc;
+                }, {});
+
+                // Mapear categorias para nomes amigáveis
+                const categoryNames = {
+                    estrutura: 'Problemas de Estrutura HTML',
+                    conteudo: 'Problemas de Conteúdo',
+                    duplicacao: 'Conteúdo Duplicado',
+                    metadados: 'Problemas de Metadados',
+                    descricoes: 'Testes de Descrições',
+                    robots: 'Testes de Meta Robots',
+                    hreflang: 'Testes de Hreflang',
+                    canonical: 'Testes de URLs Canônicas',
+                    structured: 'Testes de Dados Estruturados',
+                    links: 'Testes de Links',
+                    imagens: 'Testes de Imagens',
+                    iframes: 'Testes de Iframes',
+                    paginacao: 'Testes de Paginação',
+                    recursos: 'Testes de Recursos',
+                };
+
+                return (
+                    <div>
+                        <header>
+                            <h1>SEO Test Site - Crawler Testing Ground</h1>
+                            <p>
+                                Este site contém várias páginas com problemas de
+                                SEO para testar a eficácia de crawlers e
+                                ferramentas de análise.
+                            </p>
+                        </header>
+
+                        <input
+                            type="text"
+                            className="search-box"
+                            placeholder="Pesquisar páginas por título, descrição ou problemas..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+
+                        <div className="site-map">
+                            <h2>Mapa do Site</h2>
+
+                            {Object.keys(groupedPages).map((category) => (
+                                <div key={category}>
+                                    <h3 className="category-title">
+                                        {categoryNames[category]}
+                                    </h3>
+                                    <div className="page-list">
+                                        {groupedPages[category].map(
+                                            (page, index) => (
+                                                <div
+                                                    className="page-card"
+                                                    key={index}
+                                                >
+                                                    <h3>
+                                                        <a href={page.path}>
+                                                            {page.title}
+                                                        </a>
+                                                    </h3>
+                                                    <p>{page.description}</p>
+                                                    <div className="issues">
+                                                        <strong>
+                                                            Problemas:
+                                                        </strong>
+                                                        <ul>
+                                                            {page.issues.map(
+                                                                (issue, i) => (
+                                                                    <li key={i}>
+                                                                        {issue}
+                                                                    </li>
+                                                                )
+                                                            )}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            )
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                );
+            };
+
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(<App />);
+        </script>
+    </body>
+</html>

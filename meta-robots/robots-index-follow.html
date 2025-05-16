@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Meta Robots - Index, Follow</title>
+        <meta name="robots" content="index, follow" />
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .robots-box {
+                background-color: #e6f7ff;
+                border: 1px solid #91d5ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .directive {
+                font-weight: bold;
+                color: #0066cc;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Meta Robots - Index, Follow</h1>
+
+        <div class="robots-box">
+            <h2>Diretiva robots presente nesta página:</h2>
+            <p>
+                <code
+                    >&lt;meta name="robots" content="<span class="directive"
+                        >index, follow</span
+                    >" /&gt;</code
+                >
+            </p>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página contém a diretiva meta robots configurada para permitir
+            indexação e seguimento de links.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>
+                Indexar esta página (permitir que apareça nos resultados de
+                busca)
+            </li>
+            <li>Seguir os links encontrados nesta página</li>
+        </ul>
+
+        <p>
+            Esta é a configuração padrão para a maioria dos sites. Mesmo sem
+            esta meta tag, os motores de busca geralmente assumem "index,
+            follow" como comportamento padrão.
+        </p>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="robots-noindex-nofollow.html"
+                    >Ir para página com noindex, nofollow</a
+                >
+            </li>
+        </ul>
+    </body>
+</html>

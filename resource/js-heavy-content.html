@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conteúdo Pesado em JavaScript</title>
+        <meta
+            name="description"
+            content="Página para testar como crawlers lidam com conteúdo e links que são renderizados apenas após a execução de JavaScript."
+        />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                color: #333;
+            }
+
+            .content-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+
+            .js-content {
+                display: none; /* Inicialmente oculto, será mostrado via JavaScript */
+                padding: 15px;
+                background-color: #f6ffed;
+                border: 1px solid #b7eb8f;
+                border-radius: 5px;
+                margin: 15px 0;
+            }
+
+            .js-links {
+                display: none; /* Inicialmente oculto, será mostrado via JavaScript */
+                padding: 15px;
+                background-color: #fff7e6;
+                border: 1px solid #ffd591;
+                border-radius: 5px;
+                margin: 15px 0;
+            }
+
+            .warning {
+                background-color: #fff7e6;
+                border-left: 4px solid #fa8c16;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+
+            .error {
+                background-color: #fff1f0;
+                border-left: 4px solid #f5222d;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+
+            .success {
+                background-color: #f6ffed;
+                border-left: 4px solid #52c41a;
+                padding: 10px 15px;
+                margin: 15px 0;
+            }
+
+            .code-block {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                margin: 15px 0;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            #loading-indicator {
+                text-align: center;
+                padding: 20px;
+                font-weight: bold;
+            }
+
+            #noscript-content {
+                padding: 15px;
+                background-color: #fff1f0;
+                border: 1px solid #ffa39e;
+                border-radius: 5px;
+                margin: 15px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Conteúdo Pesado em JavaScript</h1>
+
+        <noscript>
+            <div id="noscript-content">
+                <h2>JavaScript Desativado</h2>
+                <p>
+                    Esta página requer JavaScript para exibir seu conteúdo
+                    principal. Por favor, ative o JavaScript no seu navegador
+                    para visualizar o conteúdo completo.
+                </p>
+                <p>
+                    <strong>Nota para crawlers:</strong> Se você é um crawler
+                    que não executa JavaScript, você não conseguirá ver o
+                    conteúdo principal desta página, incluindo:
+                </p>
+                <ul>
+                    <li>O texto principal do artigo</li>
+                    <li>Links para outras páginas relacionadas</li>
+                    <li>Tabelas de dados importantes</li>
+                    <li>Elementos interativos</li>
+                </ul>
+            </div>
+        </noscript>
+
+        <div class="content-section">
+            <h2>Sobre esta Página</h2>
+            <p>
+                Esta página demonstra o problema de conteúdo que depende de
+                JavaScript para ser renderizado. O conteúdo principal e os links
+                para outras páginas só são visíveis após a execução de
+                JavaScript.
+            </p>
+            <p>Isso pode causar problemas para:</p>
+            <ul>
+                <li>Crawlers que não executam JavaScript</li>
+                <li>Usuários com JavaScript desativado</li>
+                <li>Dispositivos com recursos limitados</li>
+                <li>Conexões de internet lentas</li>
+            </ul>
+        </div>
+
+        <div id="loading-indicator">
+            Carregando conteúdo principal... Por favor, aguarde.
+        </div>
+
+        <!-- Conteúdo que será renderizado via JavaScript -->
+        <div id="main-content" class="js-content">
+            <h2>Conteúdo Principal (Renderizado via JavaScript)</h2>
+            <p>
+                Este é o conteúdo principal da página, que só é visível após a
+                execução de JavaScript. Se você está vendo este texto, significa
+                que o JavaScript foi executado com sucesso.
+            </p>
+            <p>
+                Em uma aplicação real, este poderia ser o conteúdo mais
+                importante da página, como:
+            </p>
+            <ul>
+                <li>O texto principal de um artigo</li>
+                <li>Produtos em uma loja virtual</li>
+                <li>Resultados de uma pesquisa</li>
+                <li>Informações críticas para o usuário</li>
+            </ul>
+
+            <div class="warning">
+                <strong>Problema para SEO:</strong> Crawlers que não executam
+                JavaScript não conseguirão indexar este conteúdo, o que pode
+                resultar em classificações mais baixas nos resultados de busca.
+            </div>
+        </div>
+
+        <!-- Links que serão renderizados via JavaScript -->
+        <div id="js-links" class="js-links">
+            <h2>Links Renderizados via JavaScript</h2>
+            <p>
+                Estes links só são visíveis após a execução de JavaScript.
+                Crawlers que não executam JavaScript não conseguirão descobrir
+                estas páginas.
+            </p>
+            <ul id="dynamic-links">
+                <!-- Links serão inseridos aqui via JavaScript -->
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Impacto no SEO</h2>
+            <p>
+                Quando o conteúdo principal e os links dependem de JavaScript
+                para serem renderizados, isso pode ter um impacto significativo
+                no SEO:
+            </p>
+            <table>
+                <tr>
+                    <th>Problema</th>
+                    <th>Impacto</th>
+                </tr>
+                <tr>
+                    <td>Conteúdo não indexado</td>
+                    <td>
+                        O conteúdo principal pode não ser indexado por crawlers
+                        que não executam JavaScript
+                    </td>
+                </tr>
+                <tr>
+                    <td>Links não descobertos</td>
+                    <td>
+                        Crawlers podem não descobrir links para outras páginas
+                        do site
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tempo de renderização</td>
+                    <td>
+                        Mesmo crawlers que executam JavaScript têm um orçamento
+                        limitado para renderização
+                    </td>
+                </tr>
+                <tr>
+                    <td>Experiência do usuário</td>
+                    <td>
+                        Usuários podem ver uma página em branco ou incompleta
+                        enquanto o JavaScript carrega
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h2>Soluções Recomendadas</h2>
+            <div class="success">
+                <strong>Renderização do lado do servidor (SSR):</strong>
+                Renderize o conteúdo principal no servidor antes de enviá-lo ao
+                cliente.
+            </div>
+            <div class="success">
+                <strong>Geração de site estático (SSG):</strong> Pré-renderize
+                páginas em HTML estático durante o build.
+            </div>
+            <div class="success">
+                <strong>Renderização híbrida:</strong> Use SSR para o conteúdo
+                inicial e hidratação para interatividade.
+            </div>
+            <div class="success">
+                <strong>HTML progressivo:</strong> Forneça uma versão básica em
+                HTML e melhore com JavaScript.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Código Implementado</h2>
+            <div class="code-block">
+                &lt;div id="main-content" class="js-content"&gt;
+                &lt;h2&gt;Conteúdo Principal (Renderizado via
+                JavaScript)&lt;/h2&gt; &lt;p&gt;Este é o conteúdo principal da
+                página...&lt;/p&gt; &lt;/div&gt; &lt;script&gt; // Simular
+                carregamento lento setTimeout(() => {
+                document.getElementById('loading-indicator').style.display =
+                'none'; document.getElementById('main-content').style.display =
+                'block'; }, 2000); &lt;/script&gt;
+            </div>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com conteúdo e links que são
+            renderizados apenas após a execução de JavaScript.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Identificar que o conteúdo principal depende de JavaScript</li>
+            <li>Executar JavaScript para acessar o conteúdo completo</li>
+            <li>Descobrir links que são renderizados via JavaScript</li>
+            <li>Reconhecer o impacto negativo desta prática no SEO</li>
+            <li>Sugerir alternativas como SSR ou SSG</li>
+        </ul>
+
+        <h3>Links para outros testes:</h3>
+        <ul>
+            <li>
+                <a href="slow-loading-page.html"
+                    >Teste de Página com Carregamento Lento</a
+                >
+            </li>
+            <li>
+                <a href="resource-loading.html"
+                    >Teste de Carregamento de Recursos</a
+                >
+            </li>
+            <li><a href="../index.html">Voltar para a página inicial</a></li>
+        </ul>
+
+        <!-- Scripts para renderizar o conteúdo -->
+        <script>
+            // Simular carregamento lento do conteúdo principal
+            setTimeout(() => {
+                // Ocultar indicador de carregamento
+                document.getElementById('loading-indicator').style.display =
+                    'none';
+
+                // Mostrar conteúdo principal
+                document.getElementById('main-content').style.display = 'block';
+
+                // Mostrar seção de links
+                document.getElementById('js-links').style.display = 'block';
+
+                // Adicionar links dinamicamente
+                const linksList = document.getElementById('dynamic-links');
+
+                const links = [
+                    {
+                        url: '../content/hidden-content.html',
+                        text: 'Teste de Conteúdo Oculto',
+                    },
+                    {
+                        url: '../content/thin-content.html',
+                        text: 'Teste de Conteúdo Escasso',
+                    },
+                    {
+                        url: '../meta-data/duplicate-titles.html',
+                        text: 'Teste de Títulos Duplicados',
+                    },
+                    {
+                        url: '../link/valid-links.html',
+                        text: 'Teste de Links Válidos',
+                    },
+                    {
+                        url: 'js-heavy-content-page2.html',
+                        text: 'Página 2 com Conteúdo JS (só acessível via JavaScript)',
+                    },
+                ];
+
+                links.forEach((link) => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = link.url;
+                    a.textContent = link.text;
+                    li.appendChild(a);
+                    linksList.appendChild(li);
+                });
+
+                // Adicionar conteúdo adicional dinamicamente
+                const additionalContent = document.createElement('div');
+                additionalContent.className = 'js-content';
+                additionalContent.innerHTML = `
+                    <h2>Conteúdo Adicional Gerado Dinamicamente</h2>
+                    <p>
+                        Este conteúdo foi gerado completamente via JavaScript e adicionado ao DOM após o carregamento da página.
+                        Crawlers que não executam JavaScript nunca verão este conteúdo.
+                    </p>
+                    <p>
+                        Em aplicações modernas baseadas em JavaScript (SPAs), praticamente todo o conteúdo
+                        é gerado desta forma, o que pode criar desafios significativos para SEO.
+                    </p>
+                `;
+
+                document.body.appendChild(additionalContent);
+            }, 2000); // Atraso de 2 segundos para simular carregamento
+        </script>
+    </body>
+</html>

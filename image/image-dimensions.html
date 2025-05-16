@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Dimensões e Compressão de Imagens</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .image-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .image-container {
+                margin: 15px 0;
+                text-align: center;
+            }
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #ddd;
+            }
+            .image-info {
+                background-color: #f9f9f9;
+                padding: 10px;
+                margin-top: 5px;
+                border-radius: 5px;
+                font-size: 0.9em;
+            }
+            .optimization-tip {
+                background-color: #f6ffed;
+                border: 1px solid #b7eb8f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Dimensões e Compressão de Imagens</h1>
+
+        <div class="image-section">
+            <h2>Imagens com diferentes dimensões</h2>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                    alt="Imagem grande (2000x1500px, 1.2MB)"
+                    width="800"
+                    height="600"
+                />
+                <div class="image-info">
+                    <p>
+                        <strong>Imagem grande redimensionada via HTML</strong>
+                    </p>
+                    <p>Dimensões originais: 2000x1500 pixels</p>
+                    <p>Tamanho do arquivo: 1.2MB</p>
+                    <p>Dimensões de exibição: 800x600 pixels</p>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Imagem média (800x600px, 300KB)"
+                />
+                <div class="image-info">
+                    <p><strong>Imagem de tamanho médio</strong></p>
+                    <p>Dimensões: 800x600 pixels</p>
+                    <p>Tamanho do arquivo: 300KB</p>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Imagem pequena (400x300px, 80KB)"
+                />
+                <div class="image-info">
+                    <p><strong>Imagem pequena</strong></p>
+                    <p>Dimensões: 400x300 pixels</p>
+                    <p>Tamanho do arquivo: 80KB</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <h2>Imagens com diferentes níveis de compressão</h2>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=90"
+                    alt="Imagem com alta qualidade (baixa compressão)"
+                />
+                <div class="image-info">
+                    <p>
+                        <strong
+                            >Imagem com alta qualidade (baixa
+                            compressão)</strong
+                        >
+                    </p>
+                    <p>Dimensões: 800x600 pixels</p>
+                    <p>Tamanho do arquivo: 500KB</p>
+                    <p>Qualidade JPEG: 90%</p>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=70"
+                    alt="Imagem com qualidade média"
+                />
+                <div class="image-info">
+                    <p><strong>Imagem com qualidade média</strong></p>
+                    <p>Dimensões: 800x600 pixels</p>
+                    <p>Tamanho do arquivo: 200KB</p>
+                    <p>Qualidade JPEG: 70%</p>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img
+                    src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=30"
+                    alt="Imagem com baixa qualidade (alta compressão)"
+                />
+                <div class="image-info">
+                    <p>
+                        <strong
+                            >Imagem com baixa qualidade (alta
+                            compressão)</strong
+                        >
+                    </p>
+                    <p>Dimensões: 800x600 pixels</p>
+                    <p>Tamanho do arquivo: 50KB</p>
+                    <p>Qualidade JPEG: 30%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="optimization-tip">
+            <h3>Dicas de otimização de imagens</h3>
+            <ul>
+                <li>
+                    <strong>Dimensionamento adequado:</strong> As imagens devem
+                    ser servidas no tamanho em que serão exibidas, evitando
+                    redimensionamento via HTML/CSS
+                </li>
+                <li>
+                    <strong>Compressão eficiente:</strong> Use ferramentas de
+                    compressão para reduzir o tamanho do arquivo sem perda
+                    significativa de qualidade
+                </li>
+                <li>
+                    <strong>Formatos modernos:</strong> Considere usar WebP em
+                    vez de JPEG/PNG para melhor compressão
+                </li>
+                <li>
+                    <strong>Lazy loading:</strong> Carregue imagens apenas
+                    quando estiverem próximas de entrar na viewport
+                </li>
+                <li>
+                    <strong>Imagens responsivas:</strong> Use srcset e sizes
+                    para fornecer imagens apropriadas para cada dispositivo
+                </li>
+            </ul>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler analisa imagens de diferentes
+            dimensões e níveis de compressão, e se ele consegue identificar
+            oportunidades de otimização.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar as dimensões reais das imagens</li>
+            <li>Comparar as dimensões reais com as dimensões de exibição</li>
+            <li>
+                Identificar imagens que são muito grandes para seu contexto de
+                exibição
+            </li>
+            <li>Analisar o tamanho do arquivo em relação às dimensões</li>
+            <li>Sugerir oportunidades de compressão para imagens grandes</li>
+            <li>Possivelmente recomendar formatos de imagem alternativos</li>
+        </ul>
+
+        <h3>Links para outros testes de imagem:</h3>
+        <ul>
+            <li><a href="image-basics.html">Teste de imagens básicas</a></li>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

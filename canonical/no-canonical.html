@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste sem Tag Canônica</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .canonical-box {
+                background-color: #f9f9f9;
+                border: 1px solid #d9d9d9;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .info {
+                background-color: #e6f7ff;
+                border: 1px solid #91d5ff;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste sem Tag Canônica</h1>
+
+        <div class="canonical-box">
+            <h2>Esta página não possui tag canônica</h2>
+            <p>
+                Nenhuma tag link rel="canonical" foi especificada no cabeçalho
+                desta página.
+            </p>
+        </div>
+
+        <div class="info">
+            <strong>Informação:</strong> Quando nenhuma tag canônica é
+            especificada, os motores de busca geralmente consideram a URL atual
+            como a versão canônica do conteúdo.
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página não contém nenhuma tag canônica. O objetivo é testar
+            como o crawler lida com a ausência de indicação explícita de URL
+            canônica.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar a ausência de tag canônica</li>
+            <li>
+                Considerar a URL atual como a versão canônica (comportamento
+                padrão)
+            </li>
+            <li>
+                Possivelmente reportar como uma oportunidade de melhoria de SEO
+            </li>
+        </ul>
+
+        <h3>Quando a tag canônica é importante:</h3>
+        <p>A ausência de tag canônica pode ser problemática em casos como:</p>
+        <ul>
+            <li>Sites com múltiplas URLs para o mesmo conteúdo</li>
+            <li>Sites com parâmetros de URL (ex: ?page=1, ?sort=price)</li>
+            <li>Sites com versões HTTP e HTTPS</li>
+            <li>Sites com versões www e não-www</li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="canonical-self.html"
+                    >Ir para página com tag canônica</a
+                >
+            </li>
+        </ul>
+    </body>
+</html>

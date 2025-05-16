@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Tipos de Links</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .link-section {
+                background-color: #f6f8fa;
+                border: 1px solid #d1d5da;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .code {
+                font-family: monospace;
+                background-color: #f1f1f1;
+                padding: 2px 4px;
+                border-radius: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Tipos de Links</h1>
+
+        <div class="link-section">
+            <h2>Links Internos</h2>
+            <p>Links que apontam para páginas dentro do mesmo site:</p>
+            <ul>
+                <li>
+                    <a href="/index.html">Link interno relativo</a> - usando
+                    caminho relativo
+                </li>
+                <li>
+                    <a href="/broken-links.html">Link interno com barra</a> -
+                    usando caminho absoluto a partir da raiz
+                </li>
+                <li>
+                    <a href="https://exemplo.com.br/canonical-self.html"
+                        >Link interno absoluto</a
+                    >
+                    - usando URL completa
+                </li>
+            </ul>
+        </div>
+
+        <div class="link-section">
+            <h2>Links Externos</h2>
+            <p>Links que apontam para outros sites:</p>
+            <ul>
+                <li>
+                    <a href="https://www.google.com">Link externo simples</a> -
+                    sem atributos especiais
+                </li>
+                <li>
+                    <a href="https://www.example.com" target="_blank"
+                        >Link externo com target="_blank"</a
+                    >
+                    - abre em nova aba
+                </li>
+                <li>
+                    <a href="https://www.wikipedia.org" rel="nofollow"
+                        >Link externo com rel="nofollow"</a
+                    >
+                    - indica aos motores de busca para não seguir
+                </li>
+            </ul>
+        </div>
+
+        <div class="link-section">
+            <h2>Links com Diferentes Atributos Rel</h2>
+            <p>Links com diferentes valores para o atributo rel:</p>
+            <table>
+                <tr>
+                    <th>Tipo de Link</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://www.example.com/sponsored"
+                            rel="sponsored"
+                            >Link com rel="sponsored"</a
+                        >
+                    </td>
+                    <td>Indica links pagos ou patrocinados</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.example.com/ugc" rel="ugc"
+                            >Link com rel="ugc"</a
+                        >
+                    </td>
+                    <td>Indica links em conteúdo gerado por usuários</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://www.example.com/nofollow"
+                            rel="nofollow"
+                            >Link com rel="nofollow"</a
+                        >
+                    </td>
+                    <td>Indica que o motor de busca não deve seguir o link</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://www.example.com/multiple"
+                            rel="nofollow sponsored"
+                            >Link com múltiplos rel</a
+                        >
+                    </td>
+                    <td>Combina múltiplos valores de rel</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="link-section">
+            <h2>Links com Diferentes Textos Âncora</h2>
+            <p>Links com diferentes tipos de texto âncora:</p>
+            <ul>
+                <li>
+                    <a href="https://www.example.com/keyword"
+                        >Palavra-chave relevante</a
+                    >
+                    - texto âncora com palavra-chave
+                </li>
+                <li>
+                    <a href="https://www.example.com/generic">Clique aqui</a> -
+                    texto âncora genérico (não recomendado para SEO)
+                </li>
+                <li>
+                    <a href="https://www.example.com/url"
+                        >https://www.example.com/url</a
+                    >
+                    - URL como texto âncora
+                </li>
+                <li>
+                    <a href="https://www.example.com/image"
+                        ><img
+                            src="https://via.placeholder.com/100x30"
+                            alt="Imagem como âncora"
+                    /></a>
+                    - imagem como âncora
+                </li>
+            </ul>
+        </div>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="broken-links.html"
+                    >Ir para página de links quebrados</a
+                >
+            </li>
+        </ul>
+    </body>
+</html>

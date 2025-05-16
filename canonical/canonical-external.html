@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de URL Canônica - External Reference</title>
+        <link
+            rel="canonical"
+            href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls?hl=pt-br"
+        />
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .canonical-box {
+                background-color: #fff1f0;
+                border: 1px solid #ffa39e;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .tag {
+                font-family: monospace;
+                background-color: #f9f9f9;
+                padding: 10px;
+                border: 1px solid #d9d9d9;
+                border-radius: 3px;
+                margin: 10px 0;
+            }
+            .warning {
+                background-color: #fffbe6;
+                border: 1px solid #ffe58f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de URL Canônica - Referência Externa</h1>
+
+        <div class="canonical-box">
+            <h2>Tag canônica presente nesta página:</h2>
+            <div class="tag">
+                &lt;link rel="canonical"
+                href="https://exemplo.com.br/canonical-self.html" /&gt;
+            </div>
+        </div>
+
+        <div class="warning">
+            <strong>Atenção:</strong> Esta página contém uma tag canônica que
+            aponta para outra URL. Em um ambiente de produção, os motores de
+            busca considerariam a outra URL como a versão principal deste
+            conteúdo.
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página contém uma tag canônica que aponta para outra página.
+            Isso indica que esta página é uma versão duplicada ou alternativa do
+            conteúdo, e a URL canônica é a versão principal.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar a tag canônica</li>
+            <li>Identificar que a URL canônica aponta para outra página</li>
+            <li>
+                Considerar a outra página como a versão principal do conteúdo
+            </li>
+            <li>
+                Possivelmente não indexar esta página, ou dar preferência à URL
+                canônica nos resultados de busca
+            </li>
+        </ul>
+
+        <h3>Casos de uso para canônica externa:</h3>
+        <ul>
+            <li>
+                Páginas com parâmetros de URL (ex: filtros, ordenação, tracking)
+            </li>
+            <li>Versões impressas de páginas</li>
+            <li>
+                Versões móveis de páginas (quando não usa design responsivo)
+            </li>
+            <li>Conteúdo duplicado em múltiplos domínios</li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li><a href="canonical-self.html">Ir para a página canônica</a></li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conteúdo Rico em Texto</title>
+        <meta
+            name="description"
+            content="Exemplo de página com conteúdo rico em texto e diferentes tags de formatação HTML."
+        />
+        <style>
+            body {
+                font-family: Georgia, serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                color: #333;
+                background-color: #f9f9f9;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            header {
+                text-align: center;
+                margin-bottom: 30px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #eee;
+            }
+
+            h1 {
+                color: #2c3e50;
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                color: #3498db;
+                font-size: 2em;
+                margin-top: 40px;
+                border-bottom: 2px solid #f0f0f0;
+                padding-bottom: 10px;
+            }
+
+            h3 {
+                color: #e67e22;
+                font-size: 1.5em;
+                margin-top: 30px;
+            }
+
+            h4 {
+                color: #9b59b6;
+                font-size: 1.3em;
+            }
+
+            h5 {
+                color: #16a085;
+                font-size: 1.1em;
+            }
+
+            h6 {
+                color: #c0392b;
+                font-size: 1em;
+                text-transform: uppercase;
+            }
+
+            p {
+                margin-bottom: 20px;
+                text-align: justify;
+            }
+
+            a {
+                color: #3498db;
+                text-decoration: none;
+                border-bottom: 1px dotted;
+            }
+
+            a:hover {
+                color: #2980b9;
+                border-bottom: 1px solid;
+            }
+
+            blockquote {
+                background-color: #f8f9fa;
+                border-left: 4px solid #3498db;
+                padding: 15px;
+                margin: 20px 0;
+                font-style: italic;
+            }
+
+            code {
+                background-color: #f0f0f0;
+                padding: 2px 5px;
+                border-radius: 3px;
+                font-family: monospace;
+            }
+
+            pre {
+                background-color: #f0f0f0;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                line-height: 1.4;
+            }
+
+            ul,
+            ol {
+                margin-bottom: 20px;
+                padding-left: 30px;
+            }
+
+            li {
+                margin-bottom: 10px;
+            }
+
+            .text-example {
+                background-color: #f8f9fa;
+                padding: 15px;
+                border-radius: 5px;
+                margin: 20px 0;
+            }
+
+            .tag-explanation {
+                background-color: #e6f7ff;
+                padding: 10px;
+                border-left: 4px solid #1890ff;
+                margin: 10px 0;
+            }
+
+            footer {
+                margin-top: 50px;
+                padding-top: 20px;
+                border-top: 1px solid #eee;
+                text-align: center;
+                font-size: 0.9em;
+                color: #7f8c8d;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Conteúdo Rico em Texto</h1>
+                <p>
+                    Um guia sobre o uso de diferentes tags de texto e formatação
+                    em HTML
+                </p>
+            </header>
+
+            <main>
+                <section>
+                    <h2>Introdução às Tags de Texto HTML</h2>
+                    <p>
+                        O HTML oferece uma variedade de tags para formatar e
+                        estruturar texto. Usar essas tags corretamente não
+                        apenas melhora a aparência do seu conteúdo, mas também
+                        ajuda na acessibilidade, SEO e na compreensão geral do
+                        seu texto.
+                    </p>
+                    <p>
+                        Nesta página, demonstraremos o uso de várias tags de
+                        texto HTML, incluindo cabeçalhos (h1-h6), parágrafos,
+                        listas, citações, ênfase e muito mais.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Hierarquia de Cabeçalhos (h1-h6)</h2>
+                    <p>
+                        Os cabeçalhos HTML são usados para definir a estrutura e
+                        hierarquia do conteúdo. Eles vão de h1 (o mais
+                        importante) até h6 (o menos importante). Uma página bem
+                        estruturada deve ter apenas um h1 e seguir uma
+                        hierarquia lógica.
+                    </p>
+
+                    <div class="text-example">
+                        <h1>Este é um cabeçalho h1</h1>
+                        <div class="tag-explanation">
+                            O h1 deve ser usado apenas uma vez por página,
+                            geralmente para o título principal.
+                        </div>
+
+                        <h2>Este é um cabeçalho h2</h2>
+                        <div class="tag-explanation">
+                            O h2 é usado para seções principais dentro do
+                            conteúdo.
+                        </div>
+
+                        <h3>Este é um cabeçalho h3</h3>
+                        <div class="tag-explanation">
+                            O h3 é usado para subseções dentro de uma seção h2.
+                        </div>
+
+                        <h4>Este é um cabeçalho h4</h4>
+                        <div class="tag-explanation">
+                            O h4 é usado para divisões menores dentro de uma
+                            subseção h3.
+                        </div>
+
+                        <h5>Este é um cabeçalho h5</h5>
+                        <div class="tag-explanation">
+                            O h5 é raramente usado, apenas para estruturas muito
+                            detalhadas.
+                        </div>
+
+                        <h6>Este é um cabeçalho h6</h6>
+                        <div class="tag-explanation">
+                            O h6 é o nível mais baixo de cabeçalho, usado apenas
+                            em casos especiais.
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Parágrafos e Quebras de Linha</h2>
+                    <p>
+                        A tag <code>&lt;p&gt;</code> é usada para definir
+                        parágrafos, que são blocos de texto separados por
+                        espaços em branco. Para quebras de linha dentro de um
+                        parágrafo, usamos a tag <code>&lt;br&gt;</code>.
+                    </p>
+
+                    <div class="text-example">
+                        <p>
+                            Este é um exemplo de parágrafo. Os parágrafos são
+                            elementos de bloco que criam uma separação visual
+                            entre blocos de texto.
+                        </p>
+                        <p>
+                            Este é outro parágrafo. Note como há um espaço entre
+                            este e o parágrafo anterior.<br />
+                            Esta linha começa após uma quebra de linha (tag br).
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Ênfase e Destaque</h2>
+                    <p>
+                        Para dar ênfase ao texto, usamos as tags
+                        <code>&lt;em&gt;</code> e <code>&lt;strong&gt;</code>. A
+                        tag <code>&lt;em&gt;</code> indica ênfase (geralmente
+                        renderizada em itálico), enquanto
+                        <code>&lt;strong&gt;</code> indica forte importância
+                        (geralmente renderizada em negrito).
+                    </p>
+
+                    <div class="text-example">
+                        <p>
+                            Este texto contém <em>ênfase</em> e
+                            <strong>forte importância</strong>.
+                        </p>
+                        <p>
+                            Você também pode combinar as tags:
+                            <strong
+                                ><em
+                                    >Este texto é enfatizado e importante</em
+                                ></strong
+                            >.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Listas Ordenadas e Não Ordenadas</h2>
+                    <p>
+                        As listas são usadas para agrupar itens relacionados.
+                        Existem dois tipos principais: listas ordenadas
+                        (<code>&lt;ol&gt;</code>) e listas não ordenadas
+                        (<code>&lt;ul&gt;</code>).
+                    </p>
+
+                    <h3>Lista Ordenada</h3>
+                    <div class="text-example">
+                        <ol>
+                            <li>Primeiro item</li>
+                            <li>Segundo item</li>
+                            <li>
+                                Terceiro item
+                                <ol>
+                                    <li>Subitem 3.1</li>
+                                    <li>Subitem 3.2</li>
+                                </ol>
+                            </li>
+                            <li>Quarto item</li>
+                        </ol>
+                    </div>
+
+                    <h3>Lista Não Ordenada</h3>
+                    <div class="text-example">
+                        <ul>
+                            <li>Item de lista</li>
+                            <li>Outro item</li>
+                            <li>
+                                Item com sublista
+                                <ul>
+                                    <li>Subitem</li>
+                                    <li>Outro subitem</li>
+                                </ul>
+                            </li>
+                            <li>Último item</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Citações</h2>
+                    <p>
+                        Para citações, o HTML oferece as tags
+                        <code>&lt;blockquote&gt;</code> para citações em bloco e
+                        <code>&lt;q&gt;</code> para citações inline.
+                    </p>
+
+                    <h3>Blockquote</h3>
+                    <div class="text-example">
+                        <blockquote>
+                            <p>
+                                A web é mais uma criação social do que técnica.
+                                Eu a projetei para um efeito social — para
+                                ajudar as pessoas a trabalharem juntas — e não
+                                como um brinquedo técnico.
+                            </p>
+                            <footer>
+                                — Tim Berners-Lee, inventor da World Wide Web
+                            </footer>
+                        </blockquote>
+                    </div>
+
+                    <h3>Citação Inline</h3>
+                    <div class="text-example">
+                        <p>
+                            Como Steve Jobs disse,
+                            <q
+                                >A inovação distingue entre um líder e um
+                                seguidor.</q
+                            >
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Código e Pré-formatação</h2>
+                    <p>
+                        Para exibir código ou texto pré-formatado, usamos as
+                        tags <code>&lt;code&gt;</code> e
+                        <code>&lt;pre&gt;</code>.
+                    </p>
+
+                    <h3>Código Inline</h3>
+                    <div class="text-example">
+                        <p>
+                            Use a função
+                            <code>document.getElementById('demo')</code> para
+                            selecionar um elemento HTML.
+                        </p>
+                    </div>
+
+                    <h3>Bloco de Código</h3>
+                    <div class="text-example">
+                        <pre><code>
+function saudacao(nome) {
+    return "Olá, " + nome + "!";
+}
+
+console.log(saudacao("Mundo"));  // Saída: Olá, Mundo!
+                        </code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Links</h2>
+                    <p>
+                        Os links são criados com a tag <code>&lt;a&gt;</code> e
+                        são essenciais para a navegação na web.
+                    </p>
+
+                    <div class="text-example">
+                        <p>
+                            Este é um
+                            <a href="https://www.example.com">link externo</a>
+                            para um site de exemplo.
+                        </p>
+                        <p>
+                            Este é um
+                            <a href="../index.html">link interno</a> para a
+                            página inicial.
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>
+                    © 2023 SEO Test Site. Esta página demonstra o uso de
+                    diferentes tags de texto HTML.
+                </p>
+                <p><a href="../index.html">Voltar para a página inicial</a></p>
+            </footer>
+        </div>
+    </body>
+</html>

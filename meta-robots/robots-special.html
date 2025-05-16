@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Meta Robots - Diretivas Especiais</title>
+        <meta name="robots" content="index, follow, noarchive, noimageindex" />
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .robots-box {
+                background-color: #f6ffed;
+                border: 1px solid #b7eb8f;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .directive {
+                font-weight: bold;
+                color: #52c41a;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #ddd;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Meta Robots - Diretivas Especiais</h1>
+
+        <div class="robots-box">
+            <h2>Diretivas robots presentes nesta página:</h2>
+            <p>
+                <code
+                    >&lt;meta name="robots" content="<span class="directive"
+                        >index, follow, noarchive, noimageindex</span
+                    >" /&gt;</code
+                >
+            </p>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página contém diretivas especiais de meta robots que permitem
+            indexação e seguimento de links, mas com restrições adicionais.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>
+                Indexar esta página (permitir que apareça nos resultados de
+                busca)
+            </li>
+            <li>Seguir os links encontrados nesta página</li>
+            <li>NÃO armazenar uma versão em cache desta página (noarchive)</li>
+            <li>NÃO indexar as imagens desta página (noimageindex)</li>
+        </ul>
+
+        <h3>Imagem de teste:</h3>
+        <p>
+            Esta imagem não deve ser indexada separadamente devido à diretiva
+            noimageindex:
+        </p>
+        <img
+            src="https://via.placeholder.com/600x300?text=Imagem+de+Teste"
+            alt="Imagem de teste para noimageindex"
+        />
+
+        <h3>Outras diretivas especiais:</h3>
+        <ul>
+            <li>
+                <strong>nosnippet</strong>: Não exibir trechos da página nos
+                resultados de busca
+            </li>
+            <li>
+                <strong>notranslate</strong>: Não oferecer tradução da página
+            </li>
+            <li>
+                <strong>noimageindex</strong>: Não indexar imagens da página
+            </li>
+            <li><strong>noarchive</strong>: Não armazenar versão em cache</li>
+            <li>
+                <strong>unavailable_after</strong>: Define uma data após a qual
+                a página não deve ser indexada
+            </li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

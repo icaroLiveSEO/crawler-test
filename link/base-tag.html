@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Base Tag</title>
+        <base href="https://exemplo.com.br/subdiretorio/" />
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .link-section {
+                background-color: #e6f7ff;
+                border: 1px solid #91d5ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .warning {
+                background-color: #fffbe6;
+                border: 1px solid #ffe58f;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+            .code {
+                font-family: monospace;
+                background-color: #f1f1f1;
+                padding: 2px 4px;
+                border-radius: 3px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Base Tag</h1>
+
+        <div class="warning">
+            <strong>Atenção:</strong> Esta página contém uma tag
+            <code>&lt;base&gt;</code> que altera a resolução de URLs relativas.
+            A base está definida como
+            <code>https://exemplo.com.br/subdiretorio/</code>.
+        </div>
+
+        <div class="link-section">
+            <h2>Tag Base</h2>
+            <p>Esta página inclui a seguinte tag no cabeçalho:</p>
+            <div class="code">
+                &lt;base href="https://exemplo.com.br/subdiretorio/" /&gt;
+            </div>
+            <p>
+                A tag base define a URL base para todas as URLs relativas na
+                página. Isso afeta links, imagens, scripts, folhas de estilo e
+                outros recursos que usam caminhos relativos.
+            </p>
+        </div>
+
+        <div class="link-section">
+            <h2>Links Relativos com Base Tag</h2>
+            <p>
+                Os seguintes links usam caminhos relativos que serão resolvidos
+                em relação à URL base:
+            </p>
+            <table>
+                <tr>
+                    <th>Link no HTML</th>
+                    <th>URL Resolvida</th>
+                </tr>
+                <tr>
+                    <td><a href="pagina.html">pagina.html</a></td>
+                    <td>https://exemplo.com.br/subdiretorio/pagina.html</td>
+                </tr>
+                <tr>
+                    <td><a href="pasta/arquivo.html">pasta/arquivo.html</a></td>
+                    <td>
+                        https://exemplo.com.br/subdiretorio/pasta/arquivo.html
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="../nivel-acima.html">../nivel-acima.html</a>
+                    </td>
+                    <td>https://exemplo.com.br/nivel-acima.html</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="link-section">
+            <h2>Links Absolutos com Base Tag</h2>
+            <p>
+                Os seguintes links usam caminhos absolutos que não são afetados
+                pela tag base:
+            </p>
+            <table>
+                <tr>
+                    <th>Link no HTML</th>
+                    <th>URL Resolvida</th>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.google.com"
+                            >https://www.google.com</a
+                        >
+                    </td>
+                    <td>https://www.google.com</td>
+                </tr>
+                <tr>
+                    <td><a href="/pagina-raiz.html">/pagina-raiz.html</a></td>
+                    <td>https://exemplo.com.br/pagina-raiz.html</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com a tag base e a resolução
+            de URLs relativas. A tag base é importante para SEO porque:
+        </p>
+        <ul>
+            <li>Afeta como os motores de busca resolvem links relativos</li>
+            <li>Pode causar problemas se não for implementada corretamente</li>
+            <li>
+                É útil para sites que são servidos de diferentes caminhos ou
+                domínios
+            </li>
+        </ul>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar a presença da tag base</li>
+            <li>
+                Resolver corretamente URLs relativas usando a base especificada
+            </li>
+            <li>
+                Tratar corretamente URLs absolutas independentemente da base
+            </li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li>
+                <a href="/index.html"
+                    >Voltar para a página inicial (URL absoluta)</a
+                >
+            </li>
+            <li>
+                <a href="link-types.html"
+                    >Ir para página de tipos de links (URL relativa)</a
+                >
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de Iframes Básicos</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .iframe-section {
+                background-color: #f0f5ff;
+                border: 1px solid #adc6ff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .iframe-container {
+                margin: 15px 0;
+                text-align: center;
+            }
+            iframe {
+                border: 1px solid #ddd;
+                max-width: 100%;
+            }
+            .code-block {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-family: monospace;
+                margin: 15px 0;
+            }
+            .error-type {
+                font-weight: bold;
+                color: #cf1322;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de Iframes Básicos</h1>
+
+        <div class="iframe-section">
+            <h2>Iframe com URL válida</h2>
+
+            <div class="iframe-container">
+                <iframe
+                    src="https://example.com"
+                    width="600"
+                    height="300"
+                    title="Exemplo de iframe com URL válida"
+                ></iframe>
+                <p><strong>Iframe com URL válida e atributo title</strong></p>
+            </div>
+
+            <div class="code-block">
+                &lt;iframe src="https://example.com" width="600" height="300"
+                title="Exemplo de iframe com URL válida" &gt;&lt;/iframe&gt;
+            </div>
+        </div>
+
+        <div class="iframe-section">
+            <h2>Iframe com URL inválida</h2>
+
+            <div class="iframe-container">
+                <iframe
+                    src="https://dominio-inexistente-para-teste.com"
+                    width="600"
+                    height="300"
+                    title="Exemplo de iframe com URL inválida"
+                ></iframe>
+                <p class="error-type">
+                    <strong
+                        >Iframe com URL inválida (domínio inexistente)</strong
+                    >
+                </p>
+            </div>
+
+            <div class="code-block">
+                &lt;iframe src="https://dominio-inexistente-para-teste.com"
+                width="600" height="300" title="Exemplo de iframe com URL
+                inválida" &gt;&lt;/iframe&gt;
+            </div>
+        </div>
+
+        <div class="iframe-section">
+            <h2>Iframe com URL de arquivo inexistente</h2>
+
+            <div class="iframe-container">
+                <iframe
+                    src="https://example.com/pagina-inexistente.html"
+                    width="600"
+                    height="300"
+                    title="Exemplo de iframe com URL de arquivo inexistente"
+                ></iframe>
+                <p class="error-type">
+                    <strong
+                        >Iframe com URL de arquivo inexistente (erro
+                        404)</strong
+                    >
+                </p>
+            </div>
+
+            <div class="code-block">
+                &lt;iframe src="https://example.com/pagina-inexistente.html"
+                width="600" height="300" title="Exemplo de iframe com URL de
+                arquivo inexistente" &gt;&lt;/iframe&gt;
+            </div>
+        </div>
+
+        <div class="iframe-section">
+            <h2>Iframe sem atributo src</h2>
+
+            <div class="iframe-container">
+                <iframe
+                    width="600"
+                    height="300"
+                    title="Exemplo de iframe sem atributo src"
+                ></iframe>
+                <p class="error-type">
+                    <strong>Iframe sem atributo src</strong>
+                </p>
+            </div>
+
+            <div class="code-block">
+                &lt;iframe width="600" height="300" title="Exemplo de iframe sem
+                atributo src" &gt;&lt;/iframe&gt;
+            </div>
+        </div>
+
+        <div class="iframe-section">
+            <h2>Iframe com atributo src vazio</h2>
+
+            <div class="iframe-container">
+                <iframe
+                    src=""
+                    width="600"
+                    height="300"
+                    title="Exemplo de iframe com atributo src vazio"
+                ></iframe>
+                <p class="error-type">
+                    <strong>Iframe com atributo src vazio</strong>
+                </p>
+            </div>
+
+            <div class="code-block">
+                &lt;iframe src="" width="600" height="300" title="Exemplo de
+                iframe com atributo src vazio" &gt;&lt;/iframe&gt;
+            </div>
+        </div>
+
+        <div class="iframe-section">
+            <h2>Iframe com conteúdo alternativo</h2>
+
+            <div class="iframe-container">
+                <iframe
+                    src="https://dominio-inexistente-para-teste.com"
+                    width="600"
+                    height="300"
+                    title="Exemplo de iframe com conteúdo alternativo"
+                >
+                    <p>
+                        Seu navegador não suporta iframes ou o conteúdo não pôde
+                        ser carregado.
+                    </p>
+                </iframe>
+                <p>
+                    <strong
+                        >Iframe com conteúdo alternativo para navegadores que
+                        não suportam iframes</strong
+                    >
+                </p>
+            </div>
+
+            <div class="code-block">
+                &lt;iframe src="https://dominio-inexistente-para-teste.com"
+                width="600" height="300" title="Exemplo de iframe com conteúdo
+                alternativo" &gt; &lt;p&gt;Seu navegador não suporta iframes ou
+                o conteúdo não pôde ser carregado.&lt;/p&gt; &lt;/iframe&gt;
+            </div>
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página testa como o crawler lida com iframes que têm URLs
+            válidas e inválidas.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar a presença de iframes na página</li>
+            <li>Verificar se os iframes têm URLs válidas</li>
+            <li>Identificar iframes com URLs quebradas ou inválidas</li>
+            <li>
+                Verificar se os iframes têm atributo title para acessibilidade
+            </li>
+            <li>
+                Possivelmente seguir e analisar o conteúdo dos iframes válidos
+            </li>
+        </ul>
+
+        <h3>Links para outros testes de iframe:</h3>
+        <ul>
+            <li>
+                <a href="iframe-data-uri.html">Teste de iframes com Data URI</a>
+            </li>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+        </ul>
+    </body>
+</html>

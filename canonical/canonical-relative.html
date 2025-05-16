@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teste de URL Canônica - Relativa</title>
+        <link rel="canonical" href="canonical-self.html" />
+        <style>
+            body {
+                font-family: Arial;
+                margin: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .canonical-box {
+                background-color: #f6ffed;
+                border: 1px solid #b7eb8f;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .tag {
+                font-family: monospace;
+                background-color: #f9f9f9;
+                padding: 10px;
+                border: 1px solid #d9d9d9;
+                border-radius: 3px;
+                margin: 10px 0;
+            }
+            .info {
+                background-color: #e6f7ff;
+                border: 1px solid #91d5ff;
+                padding: 10px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Teste de URL Canônica - Relativa</h1>
+
+        <div class="canonical-box">
+            <h2>Tag canônica presente nesta página:</h2>
+            <div class="tag">
+                &lt;link rel="canonical" href="canonical-self.html" /&gt;
+            </div>
+        </div>
+
+        <div class="info">
+            <strong>Informação:</strong> Esta página usa uma URL relativa na tag
+            canônica. Os motores de busca devem resolver esta URL relativa para
+            uma URL absoluta com base na URL atual.
+        </div>
+
+        <h2>Sobre este teste</h2>
+        <p>
+            Esta página contém uma tag canônica com uma URL relativa. Os motores
+            de busca devem resolver esta URL relativa para uma URL absoluta.
+        </p>
+
+        <h3>O que o crawler deve fazer:</h3>
+        <ul>
+            <li>Detectar a tag canônica</li>
+            <li>Resolver a URL relativa para uma URL absoluta</li>
+            <li>Considerar a URL resolvida como a versão canônica</li>
+        </ul>
+
+        <h3>Resolução de URLs relativas:</h3>
+        <p>
+            Se esta página estiver em
+            <code>https://exemplo.com.br/canonical-relative.html</code>, a URL
+            canônica relativa <code>canonical-self.html</code> deve ser
+            resolvida para
+            <code>https://exemplo.com.br/canonical-self.html</code>.
+        </p>
+
+        <h3>Considerações sobre URLs relativas:</h3>
+        <ul>
+            <li>
+                URLs relativas são válidas para tags canônicas, mas URLs
+                absolutas são recomendadas
+            </li>
+            <li>
+                URLs relativas podem causar problemas se a página for acessada
+                por diferentes caminhos
+            </li>
+            <li>
+                A maioria dos motores de busca consegue resolver URLs relativas
+                corretamente
+            </li>
+        </ul>
+
+        <h3>Links de teste:</h3>
+        <ul>
+            <li><a href="/index.html">Voltar para a página inicial</a></li>
+            <li>
+                <a href="canonical-self.html"
+                    >Ir para a página canônica absoluta</a
+                >
+            </li>
+        </ul>
+    </body>
+</html>
